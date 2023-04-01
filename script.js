@@ -1,3 +1,5 @@
+/*** fading animation between sections ***/
+
 // Get all sections on the page
 const allSections = document.querySelectorAll('section');
 
@@ -21,15 +23,48 @@ window.addEventListener('scroll', () => {
 
 
 
-// Random shape generation
+
+
+/*** Dark Mode toggling ***/
+
+
+// Get dark mode preference from local storage
+var isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+// Set CSS class based on dark mode preference
+if (isDarkMode) {
+  document.body.classList.add('dark-mode');
+} else {
+  document.body.classList.remove('dark-mode');
+}
+
+const darkModeToggle = document.querySelector("#dark-mode-toggle");
+
+darkModeToggle.addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+
+    // Set dark mode preference to local storage
+    if (isDarkMode) {
+        localStorage.setItem('darkMode', 'false');
+        isDarkMode = false;
+    } else {
+        localStorage.setItem('darkMode', 'true');
+        isDarkMode = true;
+    }
+  
+  });
+  
+
+  /*** Random shape generation ***/
 const svg = document.querySelector('.background-shapes');
 
 // Randomize the position of each shape
 const shapes = svg.querySelectorAll('circle, rect');
+
 shapes.forEach(shape => {
-  const x = Math.floor(Math.random() * 80) + 10; // Random number between 10 and 90
-  const y = Math.floor(Math.random() * 80) + 10; // Random number between 10 and 90
-  const op = Math.random() * 0.9; // Random number between 10 and 90
+  const x = Math.floor(Math.random() * 120); // Random number between 10 and 90
+  const y = Math.floor(Math.random() * 50) + 20; // Random number between 10 and 90
+  const op = Math.random() * 0.5; // Random number between 10 and 90
   const r = Math.floor(Math.random() * 255); 
   const g = Math.floor(Math.random() * 255); 
   const b = Math.floor(Math.random() * 255); 
@@ -47,14 +82,8 @@ shapes.forEach(shape => {
 
 
 
-// Dark Mode toggling
-/*
-const darkModeToggle = document.querySelector("#dark-mode-toggle");
 
-darkModeToggle.addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
-  });
-*/
+
 
 
 
