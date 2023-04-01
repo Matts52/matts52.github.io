@@ -1,0 +1,1 @@
+This serves as a revamped personal webpage which is easier to maintain and adds a little more creativity than the previous version of my webpage
