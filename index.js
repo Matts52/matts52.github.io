@@ -1,9 +1,11 @@
 /*** window onload functionality ***/
 window.onload = function(){
 
+  // Generate all of the website tiles
   generateProjectTiles();
   generatePaperTiles();
   generateEducationTiles();
+  generateExperienceTiles();
 
 }
 
