@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Bearish or Bullish",
+      "githubLink": "https://github.com/Matts52/Bearish-or-Bullish",
+      "imageSrc": "assets/projects/Bearish_or_Bullish.jpg",
+      "description": "An exploratory analysis of the predictive capacity of Wall Street Journal language attention and sentiment on key market fluctuation indicators. This paper first scraped a vast database of WSJ articles, then built an LDA model for the language used, while using the RoBERTa sentiment transformer to weigh directional attention of topics. Finally a Lasso regression was applied to optimize the bias-variance tradeoff with respect to how many topics to include when predicting movement of market fluctuation indicators.",
+      "pdfLink": "assets/papers/Bearish_or_Bullish.pdf"
+    },
+    {
+      "title": "Money is Motivation",
+      "githubLink": "https://github.com/Matts52/Money-is-Motivation",
+      "imageSrc": "assets/projects/Money_is_Motivation.jpg",
+      "description": "An investigation of the game-level predictive capacity of intrateam salary dispersion. I utilize NBA salary metrics and scrape NBA game minute logs to create measures of per-minute salary dispersion which is then used to predict game-level outcomes using Random Forests. This is all done as a proxy for the future-looking short-term performance of a firm with respect to within company pay distribution.",
+      "pdfLink": "assets/papers/Money_is_Motivation.pdf"
+    }
+  ]
+  
