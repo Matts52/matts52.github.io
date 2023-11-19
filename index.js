@@ -6,6 +6,7 @@ window.onload = function(){
   generatePaperTiles();
   generateEducationTiles();
   generateExperienceTiles();
+  generateContactTiles();
 
 }
 
