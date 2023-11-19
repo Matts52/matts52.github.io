@@ -1,3 +1,16 @@
+/*** window onload functionality ***/
+window.onload = function(){
+
+  generateProjectTiles();
+
+
+
+}
+
+
+
+
+
 /*** fading animation between sections ***/
 
 // Get all sections on the page
