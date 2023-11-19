@@ -176,28 +176,10 @@ async function generateExperienceTiles() {
 
 
 
-function generateContactTiles(){
+async function generateContactTiles(){
   // Define an array of contact data
-  const contactData = [
-    {
-      link: "https://www.linkedin.com/in/matthew-senick/",
-      iconSrc: "assets/icons/linkedin-white.svg",
-      altText: "LinkedIn",
-      title: "LinkedIn",
-    },
-    {
-      link: "https://github.com/Matts52",
-      iconSrc: "assets/icons/github.svg",
-      altText: "GitHub",
-      title: "GitHub",
-    },
-    {
-      link: "mailto:senick.matthew@gmail.com",
-      iconSrc: "assets/icons/Mail-Icon-White-on-Black.png",
-      altText: "Email",
-      title: "Email",
-    },
-  ];
+  const response = await fetch('data/contact.json');
+  const contacts = await response.json();
 
   const container = document.querySelector("#contact");
 
@@ -206,7 +188,7 @@ function generateContactTiles(){
     <div class="container">
       <h2 class="mb-4">Get in Touch</h2>
       <div class="row">
-        ${contactData.map(contact => `
+        ${contacts.map(contact => `
           <div class="col-md-4 mb-4">
             <a href="${contact.link}" class="card-link">
               <div class="card card-button h-50">
