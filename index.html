@@ -24,7 +24,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <script type="text/javascript" src="./scripts/gen_project_tiles.js"></script>
+    <script type="text/javascript" src="./scripts/gen_tiles.js"></script>
 
   </head>
   <body>
@@ -220,60 +220,8 @@
     <section id="projects" class="py-5"></section>
 
 
-
-      <!-- PAPERS -->
-      <section id="papers" class="py-5">
-        <div class="container">
-          <h2 class="mb-4">Papers</h2>
-
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <div class="card h-100"> 
-                <div class="position-relative">
-                    <a href="https://github.com/Matts52/Money-is-Motivation" class="position-absolute top-0 start-100 translate-middle p-3" style="z-index: 1;">
-                        <img src="assets/icons/github.svg" class="github-icon" alt="GitHub icon" width="40">
-                      </a>
-                    <img class="card-img-top-large" src="assets/projects/Bearish_or_Bullish.jpg" alt="University 2">
-                </div>
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Bearish or Bullish</h5>
-                  <div class="flex-grow-1">
-                    <p class="card-text">An exploratory analysis of the predictive capacity of Wall Street Journal language attention and sentiment 
-                        on key market fluctuation indicators. This paper first scraped a vast database of WSJ articles, then built an LDA model for the 
-                        language used, while using the RoBERTa sentiment transformer to weigh directional attention of topics. Finally a Lasso regression 
-                        was applied to optimize the bias-variance tradeoff with respect to how many topics to include when predicting movement of market 
-                        fluctuation indicators.</p>
-                  </div>
-                  <div class="mt-auto">
-                    <a href="assets/papers/Bearish_or_Bullish.pdf" class="btn btn-primary card-btn">Read</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="position-relative">
-                    <a href="https://github.com/Matts52/Bearish-or-Bullish" class="position-absolute top-0 start-100 translate-middle p-3" style="z-index: 1;">
-                        <img src="assets/icons/github.svg" class="github-icon" alt="GitHub icon" width="40">
-                    </a>
-                    <img class="card-img-top-large" src="assets/projects/Money_is_Motivation.jpg" alt="University 2">
-                </div>
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Money is Motivation</h5>
-                  <div class="flex-grow-1">
-                    <p class="card-text">An investigation of the game-level predictive capacity of intrateam salary dispersion. I utilize NBA salary metrics and scrape 
-                        NBA game minute logs to create measures of per-minute salary dispersion which is then used to predict game-level outcomes using Random Forests. 
-                        This is all done as a proxy for the future looking short-term performance of a firm with respect to within company pay distribution.</p>
-                  </div>
-                  <div class="mt-auto">
-                    <a href="assets/papers/Money_is_Motivation.pdf" class="btn btn-primary card-btn">Read</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    <!-- PAPERS -->
+    <section id="papers" class="py-5"></section>
 
 
          <!-- EXPERIENCE -->
@@ -511,6 +459,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

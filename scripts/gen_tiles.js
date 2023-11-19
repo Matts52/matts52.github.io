@@ -71,3 +71,73 @@ function generateProjectTiles(){
   container.innerHTML = projectsHTML;
 }
 
+
+
+function generatePaperTiles() {
+  // Define an array of paper data
+  const papers = [
+    {
+      title: "Bearish or Bullish",
+      githubLink: "https://github.com/Matts52/Bearish-or-Bullish",
+      imageSrc: "assets/projects/Bearish_or_Bullish.jpg",
+      description: "An exploratory analysis of the predictive capacity of Wall Street Journal language attention and sentiment on key market fluctuation indicators. This paper first scraped a vast database of WSJ articles, then built an LDA model for the language used, while using the RoBERTa sentiment transformer to weigh directional attention of topics. Finally a Lasso regression was applied to optimize the bias-variance tradeoff with respect to how many topics to include when predicting movement of market fluctuation indicators.",
+      pdfLink: "assets/papers/Bearish_or_Bullish.pdf",
+    },
+    {
+      title: "Money is Motivation",
+      githubLink: "https://github.com/Matts52/Money-is-Motivation",
+      imageSrc: "assets/projects/Money_is_Motivation.jpg",
+      description: "An investigation of the game-level predictive capacity of intrateam salary dispersion. I utilize NBA salary metrics and scrape NBA game minute logs to create measures of per-minute salary dispersion which is then used to predict game-level outcomes using Random Forests. This is all done as a proxy for the future-looking short-term performance of a firm with respect to within company pay distribution.",
+      pdfLink: "assets/papers/Money_is_Motivation.pdf",
+    },
+  ];
+
+  // Get the container element
+  const container = document.querySelector("#papers");
+
+  // Create the papers section HTML
+  const papersHTML = `
+    <div class="container">
+      <h2 class="mb-4">Papers</h2>
+      <div class="row">
+        ${papers.map(paper => `
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="position-relative">
+                <a href="${paper.githubLink}" class="position-absolute top-0 start-100 translate-middle p-3" style="z-index: 1;">
+                  <img src="assets/icons/github.svg" class="github-icon" alt="GitHub icon" width="40">
+                </a>
+                <img class="card-img-top-large" src="${paper.imageSrc}" alt="${paper.title}">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${paper.title}</h5>
+                <div class="flex-grow-1">
+                  <p class="card-text">${paper.description}</p>
+                </div>
+                <div class="mt-auto">
+                  <a href="${paper.pdfLink}" class="btn btn-primary card-btn">Read</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  // Set the innerHTML of the container
+  container.innerHTML = papersHTML;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
