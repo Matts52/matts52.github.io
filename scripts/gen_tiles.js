@@ -131,6 +131,86 @@ function generatePaperTiles() {
 
 
 
+function generateEducationTiles() {
+  // Define an array of education data
+  const education = [
+    {
+      institution: "University of Toronto",
+      logoSrc: "assets/companies/utoronto-logo.png",
+      degree: "Master of Economics",
+      description: "During my time at the University of Toronto pursuing my Master's in Economics, I was fortunate to have the opportunity to learn and grow at a world-class institution. Not only was I able to expand the breadth of my knowledge in economics and related fields, but I was also able to dive more deeply into my research niche of econometric machine learning. One of the highlights of my education was being surrounded by so many other motivated individuals who shared my passion for learning and discovery. Overall, my experience at the University of Toronto was an incredibly rewarding one that has shaped my academic and professional pursuits.",
+      courseHighlights: [
+        "Economic Machine Learning (A+)",
+        "Statistical Methods for Machine Learning and Data Mining: (A)",
+        "Computational Statistics: (A-)",
+        "Econometrics: (A-)",
+      ],
+    },
+    {
+      institution: "University of Saskatchewan",
+      logoSrc: "assets/companies/usask-logo.png",
+      degree: "Bachelor of Computer Science and Economics",
+      description: "During my undergraduate studies, I gained foundational skills in both computer science and economics. The diverse faculty I learned from allowed me to approach concepts from multiple perspectives, shaping and forming my interests in both academia and industry. This experience provided me with a well-rounded education that allowed me to expand my knowledge beyond just the classroom. It was a great opportunity to learn from multiple fields, and this experience provided me with the tools to further my education and career.",
+      courseHighlightsEconomics: [
+        "Introduction to Empirical Economics (100%)",
+        "Intermediate Microeconomics (96%)",
+        "Monetary Theory (94%)",
+        "Mathematical Introduction to Micro Theory (93%)",
+      ],
+      courseHighlightsComputerScience: [
+        "Information Visualization (95%)",
+        "Machines and Algorithms (93%)",
+        "Simulation Principles (91%)",
+        "Deep Learning (87%)",
+      ],
+    },
+  ];
+
+  // Get the container element
+  const container = document.querySelector("#education");
+
+  // Create the education section HTML
+  const educationHTML = `
+  <div class="container">
+    <h2 class="mb-4">Education</h2>
+    <div class="row align-items-stretch">
+      ${education.map(edu => `
+        <div class="col-md-6 mb-4">
+        <div class="card h-100 education-card">
+        <div class="card-body">
+          <img class="card-img-top" src="${edu.logoSrc}" alt="${edu.institution}">
+          <h4 class="card-title">${edu.degree}</h4>
+          <p class="card-subtitle mb-2 text-muted">${edu.institution}</p>
+          <p class="card-text">${edu.description}</p>
+          <p class="card-text"><u>Course Highlights</u></p>
+          <ul class="card-list">
+            ${edu.courseHighlights ? edu.courseHighlights.map(highlight => `<li>${highlight}</li>`).join('') : ''}
+          </ul>
+          ${edu.courseHighlightsEconomics ? `
+            <p class="card-text"><u>Course Highlights (Economics)</u></p>
+            <ul class="card-list">
+              ${edu.courseHighlightsEconomics.map(highlight => `<li>${highlight}</li>`).join('')}
+            </ul>
+          ` : ''}
+          ${edu.courseHighlightsComputerScience ? `
+            <p class="card-text"><u>Course Highlights (Computer Science)</u></p>
+            <ul class="card-list">
+              ${edu.courseHighlightsComputerScience.map(highlight => `<li>${highlight}</li>`).join('')}
+            </ul>
+          ` : ''}
+          </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  </div>
+`;
+
+  // Set the innerHTML of the container
+  container.innerHTML = educationHTML;
+}
+
+
 
 
 

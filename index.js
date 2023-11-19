@@ -3,7 +3,7 @@ window.onload = function(){
 
   generateProjectTiles();
   generatePaperTiles();
-
+  generateEducationTiles();
 
 }
 
