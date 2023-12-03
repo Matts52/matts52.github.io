@@ -1,6 +1,9 @@
 /*** window onload functionality ***/
 window.onload = function(){
 
+  // Generate the shapes on the title page
+  generateShapes();
+
   // Generate all of the website tiles
   generateProjectTiles();
   generatePaperTiles();
@@ -69,39 +72,3 @@ darkModeToggle.addEventListener("click", function() {
     }
   
   });
-  
-
-/*** Random shape generation ***/
-const svg = document.querySelector('.background-shapes');
-
-// Randomize the position of each shape
-const shapes = svg.querySelectorAll('circle, rect');
-
-shapes.forEach(shape => {
-  const x = Math.floor(Math.random() * 120); // Random number between 10 and 90
-  const y = Math.floor(Math.random() * 50) + 20; // Random number between 10 and 90
-  const op = Math.random() * 0.5; // Random number between 10 and 90
-  const r = Math.floor(Math.random() * 255); 
-  const g = Math.floor(Math.random() * 255); 
-  const b = Math.floor(Math.random() * 255); 
-
-  shape.setAttribute('cx', x);
-  shape.setAttribute('cy', y);
-  shape.setAttribute('x', x);
-  shape.setAttribute('y', y);
-  shape.setAttribute('opacity', op);
-  shape.setAttribute('fill', "rgb("+r.toString()+","+g.toString()+","+b.toString()+")")
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
