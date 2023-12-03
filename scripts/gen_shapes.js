@@ -28,7 +28,7 @@ async function generateShapes(){
     const svg = document.querySelector('.background-shapes');
 
     // Example: Add circles and rectangles dynamically
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 5; i++) {
         const x = Math.floor(Math.random() * 120); // Random number between 0 and 120
         const y = Math.floor(Math.random() * 80) + 10; // Random number between 10 and 90
         const opacity = Math.random() * 0.5; // Random opacity between 0 and 0.5
@@ -36,10 +36,13 @@ async function generateShapes(){
         const g = Math.floor(Math.random() * 255);
         const b = Math.floor(Math.random() * 255);
     
-        const circle = createCircle(x, y, 10, `rgb(${r},${g},${b})`, opacity);
-        svg.appendChild(circle);
-    
-        const rect = createRectangle(x, y, 20, 20, `rgb(${r},${g},${b})`, opacity);
-        svg.appendChild(rect);
+        // Randomly choose between creating a circle or a rectangle
+        if (Math.random() < 0.5) {
+          const circle = createCircle(x, y, 10, `rgb(${r},${g},${b})`, opacity);
+          svg.appendChild(circle);
+        } else {
+          const rect = createRectangle(x, y, 20, 20, `rgb(${r},${g},${b})`, opacity);
+          svg.appendChild(rect);
+        }
     }
 }
