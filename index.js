@@ -13,11 +13,7 @@ window.onload = function(){
 
 }
 
-
-
-
-
-/*** fading animation between sections ***/
+/*** Fading Animation between sections ***/
 
 // Get all sections on the page
 const allSections = document.querySelectorAll('section');
@@ -40,12 +36,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-
-
-
-
 /*** Dark Mode toggling ***/
-
 
 // Get dark mode preference from local storage
 var isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -70,5 +61,4 @@ darkModeToggle.addEventListener("click", function() {
         localStorage.setItem('darkMode', 'true');
         isDarkMode = true;
     }
-  
-  });
+});
