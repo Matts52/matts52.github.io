@@ -1,5 +1,5 @@
 
-async function generateProjectTiles(){
+async function generateProjectTiles() {
   // Fetch project data from JSON file
   const response = await fetch('data/projects.json');
   const projects = await response.json();
@@ -161,7 +161,7 @@ async function generateExperienceTiles() {
                 <h4 class="card-title">${exp.position}</h4>
                 <h5 class="card-subtitle mb-2 text-muted">${exp.company}</h5>
                 <p class="card-text">${exp.date}</p>
-                <p class="card-text">${exp.description}</p>
+                <br>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ async function generateExperienceTiles() {
 
 
 
-async function generateContactTiles(){
+async function generateContactTiles() {
   // Define an array of contact data
   const response = await fetch('data/contact.json');
   const contacts = await response.json();
