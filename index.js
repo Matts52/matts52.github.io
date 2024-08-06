@@ -1,5 +1,5 @@
 /*** window onload functionality ***/
-window.onload = function(){
+window.onload = function () {
 
   // Generate the shapes on the title page
   generateShapes();
@@ -50,15 +50,15 @@ if (isDarkMode) {
 
 const darkModeToggle = document.querySelector("#dark-mode-toggle");
 
-darkModeToggle.addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
+darkModeToggle.addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
 
-    // Set dark mode preference to local storage
-    if (isDarkMode) {
-        localStorage.setItem('darkMode', 'false');
-        isDarkMode = false;
-    } else {
-        localStorage.setItem('darkMode', 'true');
-        isDarkMode = true;
-    }
+  // Set dark mode preference to local storage
+  if (isDarkMode) {
+    localStorage.setItem('darkMode', 'false');
+    isDarkMode = false;
+  } else {
+    localStorage.setItem('darkMode', 'true');
+    isDarkMode = true;
+  }
 });
