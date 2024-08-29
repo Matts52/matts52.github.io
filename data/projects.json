@@ -1,10 +1,10 @@
 [
   {
-    "title": "Q-Learning Auction Agent",
-    "githubLink": "https://github.com/Matts52/Q_Learn_Single_Sealed_Bid_Auction",
-    "imageSrc": "assets/projects/Q_Learn.PNG",
-    "description": "The goal of this project was to take an initial step to exploring reinforcement learning and agent-based machine learning. Essentially, this JavaScript application uses a single state Q-Learning algorithm to teach an artificial agent how to optimally bid in a two-player sealed bid auction setting.",
-    "demoLink": "https://matthewsenick.com/Q_Learn_Single_Sealed_Bid_Auction/"
+    "title": "DBT Inline ML Preprocessing Package",
+    "githubLink": "https://github.com/Matts52/dbt_ml_inline_preprocessing",
+    "imageSrc": "assets/projects/dbt_ml_inline_preprocessing.png",
+    "description": "A published dbt package that abstracts away the SQL code necessary to perform various machine learning preprcessing techniques inline in a statement.",
+    "demoLink": "https://hub.getdbt.com/Matts52/dbt_ml_inline_preprocessing/latest/"
   },
   {
     "title": "Helper Website for Students",
@@ -14,17 +14,17 @@
     "demoLink": "http://www.matthewsenick.com/ECO304/"
   },
   {
+    "title": "Q-Learning Auction Agent",
+    "githubLink": "https://github.com/Matts52/Q_Learn_Single_Sealed_Bid_Auction",
+    "imageSrc": "assets/projects/Q_Learn.PNG",
+    "description": "The goal of this project was to take an initial step to exploring reinforcement learning and agent-based machine learning. Essentially, this JavaScript application uses a single state Q-Learning algorithm to teach an artificial agent how to optimally bid in a two-player sealed bid auction setting.",
+    "demoLink": "https://matthewsenick.com/Q_Learn_Single_Sealed_Bid_Auction/"
+  },
+  {
     "title": "Command Line Chess",
     "githubLink": "https://github.com/Matts52/CLChess",
     "imageSrc": "assets/projects/CLChess.jpg",
     "description": "A minimalist command line chess application built with python. In this game, you can choose to play against another user, a random-moving AI player, or a simple cost-minimizing AI player.",
     "demoLink": "https://github.com/Matts52/CLChess"
-  },
-  {
-    "title": "Olympic Medal Data Visualization",
-    "githubLink": "https://github.com/Matts52/olympic-data-visualization",
-    "imageSrc": "assets/projects/Olympic_DataVis.jpg",
-    "description": "A tool that lets you explore and compare historical medal counts in the Olympics. A completely interactive map is available to the user and a variety of settings can be explored. Medal counts are shown in stacked bar charts along with a time series trend",
-    "demoLink": "https://www.matthewsenick.com/olympic-data-visualization/"
   }
 ]
