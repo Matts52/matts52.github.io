@@ -3,7 +3,7 @@
     "title": "DBT Inline ML Preprocessing Package",
     "githubLink": "https://github.com/Matts52/dbt_ml_inline_preprocessing",
     "imageSrc": "assets/projects/dbt_ml_inline_preprocessing.png",
-    "description": "A published dbt package that abstracts away the SQL code necessary to perform various machine learning preprcessing techniques inline in a statement.",
+    "description": "A published dbt package that abstracts away the SQL code necessary to perform various machine learning preprocessing techniques. All techniques are meant to be applied inline within an SQL select statement.",
     "demoLink": "https://hub.getdbt.com/Matts52/dbt_ml_inline_preprocessing/latest/"
   },
   {
