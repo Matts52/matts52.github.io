@@ -7,12 +7,15 @@ async function generateProjectTiles() {
   // Get the container element
   const container = document.getElementById("projects");
 
+  // Filter projects based on the "display" property
+  const visibleProjects = projects.filter(project => project.display === "true");
+
   // Create the projects section HTML
   const projectsHTML = `
       <div class="container">
         <h2 class="mb-4">Projects</h2>
         <div class="row">
-          ${projects.map(project => `
+          ${visibleProjects.map(project => `
             <div class="col-md-6 mb-4">
               <div class="card h-100">
                 <div class="position-relative">
