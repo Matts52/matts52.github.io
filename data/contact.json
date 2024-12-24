@@ -1,21 +1,23 @@
 [
-    {
-      "link": "https://www.linkedin.com/in/matthew-senick/",
-      "iconSrc": "assets/icons/linkedin-white.svg",
-      "altText": "LinkedIn",
-      "title": "LinkedIn"
-    },
-    {
-      "link": "https://github.com/Matts52",
-      "iconSrc": "assets/icons/github.svg",
-      "altText": "GitHub",
-      "title": "GitHub"
-    },
-    {
-      "link": "mailto:senick.matthew@gmail.com",
-      "iconSrc": "assets/icons/Mail-Icon-White-on-Black.png",
-      "altText": "Email",
-      "title": "Email"
-    }
-  ]
-  
+  {
+    "link": "https://www.linkedin.com/in/matthew-senick/",
+    "iconSrc": "assets/icons/linkedin-white.svg",
+    "altText": "LinkedIn",
+    "title": "LinkedIn",
+    "show": true
+  },
+  {
+    "link": "https://github.com/Matts52",
+    "iconSrc": "assets/icons/github.svg",
+    "altText": "GitHub",
+    "title": "GitHub",
+    "show": true
+  },
+  {
+    "link": "https://medium.com/@senick.matthew",
+    "iconSrc": "assets/icons/new_medium_logo.svg",
+    "altText": "Medium",
+    "title": "Medium",
+    "show": true
+  }
+]
