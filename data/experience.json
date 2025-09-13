@@ -7,18 +7,18 @@
     "description": "Continuing my journey with 7Shifts, I have transitioned into a role as an analytics engineer. This role has allowed me to further develop my skills in data architecture, business data translation, and analytical modelling. I have been able to work on a variety of projects that have allowed me to gain a deeper understanding of the importance of pipeline architecture and the role it plays in the effective functioning of data-driven organizations. I have learned how to streamline data processing pipelines, improve data quality and integrity, and design and implement data models that can support scalable analytics. This role has been instrumental in shaping my understanding of the maintenance side of data work, providing me with a solid foundation to build upon in my career."
   },
   {
-    "company": "7shifts",
-    "logoSrc": "assets/companies/7shifts-rebrand.svg",
-    "position": "Senior Data Analyst",
-    "date": "March 2024 - March 2025",
-    "description": "As I grew with 7Shifts, I was given the opportunity to take a leading role as an indivudal contributor. This included driving and owning several large scale analytical engineering projects, setting analytics best practices both within the team and throughout the larger company, and diving into creative and challangeing statistcal problems."
-  },
-  {
     "company": "University of Saskatchewan",
     "logoSrc": "assets/companies/usask-logo.png",
     "position": "Sessional Lecturer",
     "date": "September 2022 - Present",
     "description": "As a sessional lecturer, I have had the privilege to teach and lead diverse groups of students, each with their unique background and learning styles. This experience has taught me the importance of effective communication, leadership, and teaching strategies. In addition, I have learned how to motivate students to strive for a common goal of knowledge, whether through creative teaching methods, interactive class discussions, or individual attention. Through this work, I have developed my skills as a teacher, mentor, and leader, and have found great satisfaction in helping others achieve their academic goals."
+  },
+  {
+    "company": "7shifts",
+    "logoSrc": "assets/companies/7shifts-rebrand.svg",
+    "position": "Senior Data Analyst",
+    "date": "March 2024 - March 2025",
+    "description": "As I grew with 7Shifts, I was given the opportunity to take a leading role as an indivudal contributor. This included driving and owning several large scale analytical engineering projects, setting analytics best practices both within the team and throughout the larger company, and diving into creative and challangeing statistcal problems."
   },
   {
     "company": "7shifts",
