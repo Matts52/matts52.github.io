@@ -1,16 +1,23 @@
 [
   {
+    "company": "Sigma Computing",
+    "logoSrc": "assets/companies/sigma-computing.svg",
+    "position": "Analytics Engineer",
+    "date": "October 2025 - Present",
+    "description": "Building on the breadth of my previous experience, I have taken on a role that gives me a chance to synthesize many of the items I have learned previously for a reapidly scaling company. Additionally, this was an interesting opportunity to work with the internal data team of a data tooling company."
+  },
+  {
     "company": "7shifts",
     "logoSrc": "assets/companies/7shifts-rebrand.svg",
     "position": "Analytics Engineer",
-    "date": "March 2025 - Present",
+    "date": "March 2025 - October 2025",
     "description": "Continuing my journey with 7Shifts, I have transitioned into a role as an analytics engineer. This role has allowed me to further develop my skills in data architecture, business data translation, and analytical modelling. I have been able to work on a variety of projects that have allowed me to gain a deeper understanding of the importance of pipeline architecture and the role it plays in the effective functioning of data-driven organizations. I have learned how to streamline data processing pipelines, improve data quality and integrity, and design and implement data models that can support scalable analytics. This role has been instrumental in shaping my understanding of the maintenance side of data work, providing me with a solid foundation to build upon in my career."
   },
   {
     "company": "University of Saskatchewan",
     "logoSrc": "assets/companies/usask-logo.png",
     "position": "Sessional Lecturer",
-    "date": "September 2022 - Present",
+    "date": "September 2022 - October 2025",
     "description": "As a sessional lecturer, I have had the privilege to teach and lead diverse groups of students, each with their unique background and learning styles. This experience has taught me the importance of effective communication, leadership, and teaching strategies. In addition, I have learned how to motivate students to strive for a common goal of knowledge, whether through creative teaching methods, interactive class discussions, or individual attention. Through this work, I have developed my skills as a teacher, mentor, and leader, and have found great satisfaction in helping others achieve their academic goals."
   },
   {
