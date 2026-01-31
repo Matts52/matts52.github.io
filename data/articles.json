@@ -2,61 +2,61 @@
 "medium": [
   {
     "title": "I dare you to create Semantic Views",
-    "link": "https://medium.com/@senick.matthew/i-dare-you-to-create-semantic-views-<unique-suffix>",
+    "link": "https://medium.com/data-engineer-things/i-dare-you-to-create-semantic-views-7a9bb0d73482",
     "description": "A motivational piece about building semantic views and why they’re valuable in analytics workflows.",
     "show": true
   },
   {
     "title": "dbt-ml-eval: Machine Learning Evaluation Metrics in dbt",
-    "link": "https://medium.com/@senick.matthew/dbt-ml-eval-machine-learning-evaluation-metrics-in-dbt-<unique-suffix>",
+    "link": "https://medium.com/data-engineer-things/dbt-ml-eval-machine-learning-evaluation-metrics-in-dbt-53c4e22ae7d4",
     "description": "Explains how to implement scalable machine learning evaluation metrics within dbt using lightweight SQL and packages.",
     "show": true
   },
   {
     "title": "Lessons from “Hacking Growth” for an analytics engineer",
-    "link": "https://medium.com/@senick.matthew/lessons-from-hacking-growth-for-an-analytics-engineer-<unique-suffix>",
+    "link": "https://medium.com/data-science-collective/lessons-from-hacking-growth-for-an-analytics-engineer-320b63050dd9",
     "description": "12 practical takeaways from *Hacking Growth* applied to the mindset and toolkit of an analytics engineer.",
     "show": true
   },
   {
     "title": "A Budget A/B Test Analysis Pipeline in dbt",
-    "link": "https://medium.com/@senick.matthew/a-budget-a-b-test-analysis-pipeline-in-dbt-<unique-suffix>",
+    "link": "https://medium.com/data-engineer-things/a-budget-a-b-test-analysis-pipeline-in-dbt-3aff819a81da",
     "description": "Walks through building an automated two-sample t-test A/B test pipeline using dbt_stat_test and dbt.",
     "show": true
   },
   {
     "title": "Why aren’t you using dbt Exposures?",
-    "link": "https://medium.com/@senick.matthew/why-arent-you-using-dbt-exposures-<unique-suffix>",
+    "link": "https://medium.com/data-engineer-things/why-arent-you-using-dbt-exposures-78b11e15be02",
     "description": "Argues that skipping dbt Exposures makes data analysis harder and shows how to integrate them effectively.",
     "show": true
   },
   {
     "title": "Automating PII Tagging in dbt with Gemini",
-    "link": "https://medium.com/@senick.matthew/automating-pii-tagging-in-dbt-with-gemini-<unique-suffix>",
+    "link": "https://medium.com/data-engineer-things/automating-pii-tagging-in-dbt-with-gemini-16ce406cc832",
     "description": "Describes how to automate PII tagging in dbt documentation using Gemini to support data governance.",
     "show": true
   },
   {
     "title": "Declarative Batch Feature Engineering within ELT Workflows",
-    "link": "https://medium.com/@senick.matthew/declarative-batch-feature-engineering-within-elt-workflows-<unique-suffix>",
+    "link": "https://medium.com/data-engineer-things/declarative-batch-feature-engineering-within-elt-workflows-f2fa9e1e7c85",
     "description": "Shows how to define machine learning preprocessing steps directly in SQL transformations inside dbt.",
     "show": true
   },
   {
     "title": "Recursive Walks down User Referral Trees",
-    "link": "https://medium.com/@senick.matthew/recursive-walks-down-user-referral-trees-<unique-suffix>",
+    "link": "https://medium.com/data-science/recursive-walks-down-user-referral-trees-0864e14042ec",
     "description": "Analyzes how to traverse and measure influence in multi-step user referral programs.",
     "show": true
   },
   {
     "title": "5 Useful Loop Patterns in dbt",
-    "link": "https://medium.com/@senick.matthew/5-useful-loop-patterns-in-dbt-<unique-suffix>",
+    "link": "https://medium.com/data-engineer-things/5-useful-loop-patterns-in-dbt-f1d959ab38b9",
     "description": "Presents common Jinja loop patterns that make dbt SQL transformations more elegant and reusable.",
     "show": true
   },
   {
     "title": "Measuring Cross-Product Adoption Using dbt_set_similarity",
-    "link": "https://medium.com/@senick.matthew/measuring-cross-product-adoption-using-dbt-set-similarity-<unique-suffix>",
+    "link": "https://medium.com/data-science/measuring-cross-product-adoption-using-dbt-set-similarity-fdf7c1f88bc2",
     "description": "Using the Jaccard Index and dbt_set_similarity to measure user overlap and cross-product adoption patterns.",
     "show": true
   }
@@ -64,19 +64,19 @@
 "substack": [
   {
     "title": "4 reasons your office space is holding your Analytics team back",
-    "link": "https://matthewsenick.substack.com/p/4-reasons-your-office-space-is-holding",
+    "link": "https://substack.com/home/post/p-185919781",
     "description": "Explores how physical office environments can inhibit collaboration, focus, and impact for analytics teams.",
     "show": true
   },
   {
     "title": "4 Reasons your Analyst is Hiding Answers from you",
-    "link": "https://matthewsenick.substack.com/p/4-reasons-your-analyst-is-hiding-answers",
+    "link": "https://substack.com/home/post/p-185034750",
     "description": "Breaks down common organizational and communication issues that lead analysts to withhold insights — and how to fix them.",
     "show": true
   },
   {
     "title": "Start with Processes, not Tables",
-    "link": "https://matthewsenick.substack.com/p/start-with-processes-not-tables",
+    "link": "https://substack.com/home/post/p-184929750",
     "description": "Argues that understanding business processes should come before modeling data tables for clearer analytics outcomes.",
     "show": true
   }
