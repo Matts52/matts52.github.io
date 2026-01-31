@@ -436,3 +436,16 @@ input:checked+.slider:before {
   filter: grayscale(0%);
   cursor: pointer;
 }
+
+
+/*** ARTICLES ***/
+.article-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.article-link:hover {
+  color: #4CAF50;
+  text-decoration: underline;
+}

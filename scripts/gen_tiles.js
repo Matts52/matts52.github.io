@@ -192,7 +192,7 @@ async function generateContactTiles() {
       <h2 class="mb-4">Get in Touch</h2>
       <div class="row">
         ${contacts.map(contact => `
-          <div class="col-md-4 mb-4">
+          <div class="col-md-3 mb-4">
             <a href="${contact.link}" class="card-link">
               <div class="card card-button h-50">
                 <img class="card-img-top" src="${contact.iconSrc}" alt="${contact.title}">
@@ -209,6 +209,72 @@ async function generateContactTiles() {
 
   // Set the innerHTML of the container
   container.innerHTML = contactHTML;
+}
+
+
+async function generateArticleTiles() {
+  // Fetch article data from JSON file
+  const response = await fetch('data/articles.json');
+  const articles = await response.json();
+
+  // Filter articles based on show property
+  const visibleMedium = articles.medium.filter(article => article.show);
+  const visibleSubstack = articles.substack.filter(article => article.show);
+
+  // Get the container element
+  const container = document.querySelector("#articles");
+
+  // Create the articles section HTML with Medium on left and Substack on right
+  const articlesHTML = `
+    <div class="container">
+      <h2 class="mb-4">Articles</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header">
+              <img src="assets/icons/new_medium_logo.svg" alt="Medium" style="height: 40px;">
+              <h4 class="card-title mt-2">Medium</h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                ${visibleMedium.map(article => `
+                  <li class="mb-3">
+                    <a href="${article.link}" target="_blank" class="article-link">
+                      <strong>${article.title}</strong>
+                    </a>
+                    <p class="card-text small">${article.description}</p>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header">
+              <img src="assets/icons/substack.svg" alt="Substack" style="height: 40px;">
+              <h4 class="card-title mt-2">Substack</h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                ${visibleSubstack.map(article => `
+                  <li class="mb-3">
+                    <a href="${article.link}" target="_blank" class="article-link">
+                      <strong>${article.title}</strong>
+                    </a>
+                    <p class="card-text small">${article.description}</p>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Set the innerHTML of the container
+  container.innerHTML = articlesHTML;
 }
 
 
