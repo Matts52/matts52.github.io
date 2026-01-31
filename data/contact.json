@@ -19,5 +19,12 @@
     "altText": "Medium",
     "title": "Medium",
     "show": true
+  },
+  {
+    "link": "https://substack.com/@matthewsenick",
+    "iconSrc": "assets/icons/substack.svg",
+    "altText": "Substack",
+    "title": "Substack",
+    "show": true
   }
 ]

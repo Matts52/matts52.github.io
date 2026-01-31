@@ -9,6 +9,7 @@ window.onload = function () {
   generatePaperTiles();
   generateEducationTiles();
   generateExperienceTiles();
+  generateArticleTiles();
   generateContactTiles();
 
 }
