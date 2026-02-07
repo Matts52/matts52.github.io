@@ -1,9 +1,15 @@
 {
 "medium": [
   {
+    "title": "Automatically Dropping Orphaned Tables in dbt",
+    "link": "https://medium.com/data-engineer-things/automatically-dropping-orphaned-tables-in-dbt-bb037984437a",
+    "description": "Explains how to automatically identify and drop orphaned tables left behind in your data warehouse using dbt.",
+    "show": true
+  },
+  {
     "title": "I dare you to create Semantic Views",
     "link": "https://medium.com/data-engineer-things/i-dare-you-to-create-semantic-views-7a9bb0d73482",
-    "description": "A motivational piece about building semantic views and why they’re valuable in analytics workflows.",
+    "description": "A motivational piece about building semantic views and why they're valuable in analytics workflows.",
     "show": true
   },
   {
