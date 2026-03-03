@@ -1,65 +1,49 @@
-/*** window onload functionality ***/
+/*** Window onload — initialize everything ***/
 window.onload = function () {
-
-  // Generate the shapes on the title page
   generateShapes();
 
-  // Generate all of the website tiles
   generateProjectTiles();
   generatePaperTiles();
   generateEducationTiles();
   generateExperienceTiles();
   generateArticleTiles();
   generateContactTiles();
+};
 
-}
 
-/*** Fading Animation between sections ***/
+/*** Section fade-in with IntersectionObserver ***/
+const observerOptions = {
+  threshold: 0.05,
+  rootMargin: '0px 0px -50px 0px'
+};
 
-// Get all sections on the page
-const allSections = document.querySelectorAll('section');
-
-// Add a scroll event listener
-window.addEventListener('scroll', () => {
-  // Loop through each section
-  allSections.forEach(section => {
-    // Check if the section is in the viewport
-    const sectionTop = section.getBoundingClientRect().top;
-    const sectionBottom = section.getBoundingClientRect().bottom;
-    const viewportHeight = window.innerHeight;
-    if (sectionTop < viewportHeight && sectionBottom > 0) {
-      // If the section is in view, add the 'in-view' class
-      section.classList.add('in-view');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
     } else {
-      // If the section is not in view, remove the 'in-view' class
-      section.classList.remove('in-view');
+      entry.target.classList.remove('in-view');
     }
   });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+  sectionObserver.observe(section);
 });
 
-/*** Dark Mode toggling ***/
 
-// Get dark mode preference from local storage
+/*** Dark Mode toggling ***/
+const darkModeToggle = document.querySelector("#dark-mode-toggle");
 var isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-// Set CSS class based on dark mode preference
+// Apply saved preference on load
 if (isDarkMode) {
   document.body.classList.add('dark-mode');
-} else {
-  document.body.classList.remove('dark-mode');
+  darkModeToggle.checked = true;
 }
 
-const darkModeToggle = document.querySelector("#dark-mode-toggle");
-
-darkModeToggle.addEventListener("click", function () {
+darkModeToggle.addEventListener("change", function () {
   document.body.classList.toggle("dark-mode");
-
-  // Set dark mode preference to local storage
-  if (isDarkMode) {
-    localStorage.setItem('darkMode', 'false');
-    isDarkMode = false;
-  } else {
-    localStorage.setItem('darkMode', 'true');
-    isDarkMode = true;
-  }
+  isDarkMode = !isDarkMode;
+  localStorage.setItem('darkMode', isDarkMode ? 'true' : 'false');
 });

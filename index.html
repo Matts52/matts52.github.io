@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Google tag (gtag.js) -->
@@ -8,19 +8,20 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-S9LK80LCD4');
   </script>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Matthew Senick — Senior Analytics Engineer. Design, data, and engineering.">
 
   <title>Matthew Senick</title>
 
-  <!-- Bootstrap and Font-awesome-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/fontawesome.min.css">
+  <!-- Google Fonts: Space Grotesk + Spectral -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -31,166 +32,130 @@
   <!-- Custom Scripts -->
   <script type="text/javascript" src="./scripts/gen_tiles.js"></script>
   <script type="text/javascript" src="./scripts/gen_shapes.js"></script>
-
 </head>
 
 <body>
 
   <header>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="https://matthewsenick.com">Matthew Senick</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#about-me">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#papers">Papers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#articles">Articles</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Social</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="assets/files/Resume_Short.pdf" target="_blank" id="resume-link">Resume</a>
-          </li>
-
+    <nav class="navbar">
+      <div class="nav-container">
+        <a class="nav-brand" href="https://matthewsenick.com">Matthew Senick</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation">
+        <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#about-me">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#papers">Papers</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#contact">Social</a></li>
+          <li><a href="assets/files/Resume_Short.pdf" target="_blank" id="resume-link">Resume</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-
   <!-- Dark Mode Toggle -->
-  <label class="switch">
+  <label class="switch" aria-label="Toggle dark mode">
     <input type="checkbox" id="dark-mode-toggle">
     <span class="slider round"></span>
   </label>
 
-  <!-- Title -->
   <main>
 
-    <section id="title" class="in-view">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-4 d-flex align-items-center">
-            <img class="profile-pic" src="assets/other/avatar.PNG" alt="Profile Picture">
-          </div>
-          <div class="col-md-6 mb-8">
-            <h1 class="name">Matthew Senick</h1>
-            <p class="credentials">Senior Analytics Engineer, Sigma</p>
-            <p class="credentials">M. Economics, University of Toronto</p>
-            <p class="credentials">B. Computer Science and Economics, University of Saskatchewan</p>
-            <p class="credentials">San Francisco, CA</p>
+    <!-- Hero / Title -->
+    <section id="title" class="hero in-view">
+      <div class="container hero-grid">
+        <div class="hero-image">
+          <img class="profile-pic" src="assets/other/avatar.PNG" alt="Profile picture of Matthew Senick">
+        </div>
+        <div class="hero-text">
+          <h1 class="name">Matthew Senick</h1>
+          <p class="subtitle">Senior Analytics Engineer, Sigma</p>
+          <p class="credential">M. Economics, University of Toronto</p>
+          <p class="credential">B. Computer Science &amp; Economics, University of Saskatchewan</p>
+          <p class="credential">San Francisco, CA</p>
+          <div class="hero-cta">
+            <a href="#articles" class="btn-accent">Read my writing</a>
+            <a href="#contact" class="btn-ghost">Get in touch</a>
           </div>
         </div>
       </div>
-
-
-      <svg class="background-shapes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      </svg>
+      <svg class="background-shapes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg>
     </section>
 
-
-
     <!-- About Me -->
-    <section id="about-me" class="py-5">
+    <section id="about-me">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 class="mb-4">About Me</h2>
-            <p class="lead mb-5">
-              As a software data professional and econometrics lecturer, I am passionate about exploring the
-              intersection of data science, technology consulting, and applied econometrics. Throughout my career, I
-              have gained experience in a variety of skills across disparate industries, including software,
-              aerospace, finance, and academia.
-            </p>
-            <p class="lead mb-5">
-              My academic background includes a Masters of Economics from the University of Toronto and a Double Honours
-              Bachelor in Computer Science and Economics from the University of Saskatchewan. This unique combination of
-              skills has allowed me to specialize in econometric exploration through computational advancements, with a
-              particular focus on machine learning, natural language processing, and big data techniques.
-            </p>
-            <p class="lead mb-5">
-              In my free time, I enjoy staying up-to-date on emerging technologies, with a current interest in
-              advancements in Analytics Engineering, Quasiexperimental Studies, and Machine Learning Engineering.
-            </p>
-          </div>
+        <h2>About Me</h2>
+        <div class="about-content">
+          <p>
+            As a software data professional and econometrics lecturer, I am passionate about exploring the
+            intersection of data science, technology consulting, and applied econometrics. Throughout my career, I
+            have gained experience in a variety of skills across disparate industries, including software,
+            aerospace, finance, and academia.
+          </p>
+          <p>
+            My academic background includes a Masters of Economics from the University of Toronto and a Double Honours
+            Bachelor in Computer Science and Economics from the University of Saskatchewan. This unique combination of
+            skills has allowed me to specialize in econometric exploration through computational advancements, with a
+            particular focus on machine learning, natural language processing, and big data techniques.
+          </p>
+          <p>
+            In my free time, I enjoy staying up-to-date on emerging technologies, with a current interest in
+            advancements in Analytics Engineering, Quasiexperimental Studies, and Machine Learning Engineering.
+          </p>
         </div>
 
-
-        <div class="row d-flex justify-content-center">
-          <div class="col-sm-1 d-flex justify-content-center icon-container">
-            <img src="assets/icons/python.svg" alt="icon1">
-            <img src="assets/icons/sql.svg" alt="icon2">
-            <img src="assets/icons/r.svg" alt="icon3">
+        <div class="icon-rows">
+          <div class="icon-row">
+            <img src="assets/icons/python.svg" alt="Python">
+            <img src="assets/icons/sql.svg" alt="SQL">
+            <img src="assets/icons/r.svg" alt="R">
           </div>
-        </div>
-        <hr style="opacity: 0.0;">
-        <div class="row d-flex justify-content-center">
-          <div class="col-sm-1 d-flex justify-content-center icon-container">
-            <img src="assets/icons/snowflake.svg" alt="icon4">
-            <img src="assets/icons/dbt.svg" alt="icon5">
-            <img src="assets/icons/js.svg" alt="icon6">
-            <img src="assets/icons/postgresql.svg" alt="icon7">
+          <div class="icon-row">
+            <img src="assets/icons/snowflake.svg" alt="Snowflake">
+            <img src="assets/icons/dbt.svg" alt="dbt">
+            <img src="assets/icons/js.svg" alt="JavaScript">
+            <img src="assets/icons/postgresql.svg" alt="PostgreSQL">
           </div>
-        </div>
-        <hr style="opacity: 0.0;">
-        <div class="row d-flex justify-content-center">
-          <div class="col-sm-1 d-flex justify-content-center icon-container">
-            <img src="assets/icons/stata.svg" alt="icon8">
-            <img src="assets/icons/java.svg" alt="icon9">
-            <img src="assets/icons/cpp.png" alt="icon10">
+          <div class="icon-row">
+            <img src="assets/icons/stata.svg" alt="Stata">
+            <img src="assets/icons/java.svg" alt="Java">
+            <img src="assets/icons/cpp.png" alt="C++">
           </div>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="py-5"></section>
+    <section id="experience"></section>
 
     <!-- EDUCATION -->
-    <section id="education" class="py-5"></section>
+    <section id="education"></section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="py-5"></section>
+    <section id="projects"></section>
 
     <!-- PAPERS -->
-    <section id="papers" class="py-5"></section>
+    <section id="papers"></section>
 
     <!-- ARTICLES -->
-    <section id="articles" class="py-5"></section>
+    <section id="articles"></section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-5"></section>
-
+    <section id="contact"></section>
 
   </main>
 
   <footer>
-    <p>Copyright © <script>document.write(new Date().getFullYear())</script> Matthew Senick</p>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Matthew Senick</p>
   </footer>
-
-  <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <script src="index.js"></script>
   <script>
