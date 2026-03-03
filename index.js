@@ -32,6 +32,14 @@ document.querySelectorAll('section').forEach(section => {
 });
 
 
+/*** Scroll progress bar ***/
+const scrollProgress = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  scrollProgress.style.width = `${scrolled * 100}%`;
+});
+
+
 /*** Dark Mode toggling ***/
 const darkModeToggle = document.querySelector("#dark-mode-toggle");
 var isDarkMode = localStorage.getItem('darkMode') === 'true';
