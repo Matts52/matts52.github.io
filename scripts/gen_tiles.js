@@ -113,17 +113,25 @@ async function generateExperienceTiles() {
   container.innerHTML = `
     <div class="container">
       <h2>Experience</h2>
-      <div class="grid">
-        ${experience.map(exp => `
-          <div class="card">
-            <div class="card__body" style="text-align: center;">
-              <img class="card__img--small" src="${exp.logoSrc}" alt="${exp.company}">
+      <div class="timeline">
+        ${experience.map((exp, i) => {
+          const side = i % 2 === 0 ? 'left' : 'right';
+          const card = `
+            <div class="timeline-card">
+              <img class="timeline-logo" src="${exp.logoSrc}" alt="${exp.company}">
               <h4 class="card__title">${exp.position}</h4>
               <p class="card__subtitle">${exp.company}</p>
-              <p class="card__text">${exp.date}</p>
+              <p class="timeline-date">${exp.date}</p>
             </div>
-          </div>
-        `).join('')}
+          `;
+          return `
+            <div class="timeline-entry timeline-entry--${side}">
+              <div class="timeline-left">${side === 'left' ? card : ''}</div>
+              <div class="timeline-dot-wrapper"><div class="timeline-dot"></div></div>
+              <div class="timeline-right">${side === 'right' ? card : ''}</div>
+            </div>
+          `;
+        }).join('')}
       </div>
     </div>
   `;
