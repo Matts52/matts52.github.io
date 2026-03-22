@@ -877,6 +877,10 @@ a.card-link {
   margin: var(--space-2) 0 0;
 }
 
+.timeline-description {
+  margin-top: var(--space-3);
+}
+
 @media (max-width: 768px) {
   .timeline::before {
     left: 19px;

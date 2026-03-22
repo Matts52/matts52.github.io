@@ -122,6 +122,7 @@ async function generateExperienceTiles() {
               <h4 class="card__title">${exp.position}</h4>
               <p class="card__subtitle">${exp.company}</p>
               <p class="timeline-date">${exp.date}</p>
+              <p class="card__text timeline-description">${exp.description}</p>
             </div>
           `;
           return `
