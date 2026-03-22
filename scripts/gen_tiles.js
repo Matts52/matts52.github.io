@@ -174,7 +174,7 @@ async function generateArticleTiles() {
     <div class="container">
       <h2>Articles</h2>
       <div class="articles-grid">
-        <div class="card">
+        <div class="card article-card--medium">
           <div class="card__header">
             <img src="assets/icons/new_medium_logo.svg" alt="Medium" class="platform-logo">
             <h4 class="card__title">Medium</h4>
@@ -190,7 +190,7 @@ async function generateArticleTiles() {
             `).join('')}
           </div>
         </div>
-        <div class="card">
+        <div class="card article-card--substack">
           <div class="card__header">
             <img src="assets/icons/substack.svg" alt="Substack" class="platform-logo">
             <h4 class="card__title">Substack</h4>
