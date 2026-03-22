@@ -459,6 +459,12 @@ input:focus-visible + .slider {
   max-width: 420px;
 }
 
+.now-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.15);
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+
 .now-header {
   display: flex;
   align-items: center;
@@ -472,6 +478,14 @@ input:focus-visible + .slider {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.now-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 .now-list {
