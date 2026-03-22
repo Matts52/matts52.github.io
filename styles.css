@@ -952,6 +952,14 @@ a.card-link {
   margin-bottom: var(--space-3);
 }
 
+.article-card--medium {
+  border-top: 3px solid #000;
+}
+
+.article-card--substack {
+  border-top: 3px solid #FF6719;
+}
+
 
 /* ===========================
    CONTACT SECTION
