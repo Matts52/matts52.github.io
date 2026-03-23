@@ -122,7 +122,12 @@ async function generateExperienceTiles() {
               <h4 class="card__title">${exp.position}</h4>
               <p class="card__subtitle">${exp.company}</p>
               <p class="timeline-date">${exp.date}</p>
-              <p class="card__text timeline-description">${exp.description}</p>
+              ${Array.isArray(exp.description)
+                ? `<ul class="card__list timeline-description">
+                     ${exp.description.map(pt => `<li>${pt}</li>`).join('')}
+                   </ul>`
+                : `<p class="card__text timeline-description">${exp.description}</p>`
+              }
             </div>
           `;
           return `

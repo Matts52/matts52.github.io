@@ -872,6 +872,10 @@ a.card-link {
   text-align: right;
 }
 
+.timeline-entry--left .timeline-card .card__list {
+  text-align: left;
+}
+
 .timeline-entry--left .timeline-logo {
   margin-left: auto;
 }
