@@ -69,6 +69,12 @@
   ],
 "substack": [
   {
+    "title": "Why Spec-Driven Development is the New Wave in Analytics Engineering",
+    "link": "https://matthewsenick.substack.com/p/why-spec-driven-development-is-the",
+    "description": "Argues that analytics engineers winning with AI aren't writing less code — they're thinking more clearly before they write any, by investing in detailed specs before implementation.",
+    "show": true
+  },
+  {
     "title": "4 reasons your office space is holding your Analytics team back",
     "link": "https://substack.com/home/post/p-185919781",
     "description": "Explores how physical office environments can inhibit collaboration, focus, and impact for analytics teams.",
