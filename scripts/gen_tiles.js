@@ -169,6 +169,43 @@ async function generateContactTiles() {
 }
 
 
+async function generateSpeakingTiles() {
+  const response = await fetch('data/speaking.json');
+  const engagements = await response.json();
+  const section = document.querySelector('#speaking');
+
+  const ticketsHTML = engagements.map(e => {
+    const links = [
+      e.links.eventPage ? `<a href="${e.links.eventPage}" target="_blank" class="btn-ghost btn-sm">Event Page</a>` : '',
+      e.links.slides    ? `<a href="${e.links.slides}"    target="_blank" class="btn-ghost btn-sm">Slides</a>`     : '',
+      e.links.recording ? `<a href="${e.links.recording}" target="_blank" class="btn-ghost btn-sm">Recording</a>`  : '',
+    ].filter(Boolean).join('');
+
+    return `
+      <div class="ticket">
+        ${e.upcoming ? '<span class="ticket__badge">Coming Soon</span>' : ''}
+        <div class="ticket__stub">
+          <img src="${e.eventLogo}" alt="${e.event}" class="ticket__stub-logo">
+          <div class="ticket__stub-event">${e.event}</div>
+          <div class="ticket__stub-meta">${e.date}<br>${e.location}</div>
+        </div>
+        <div class="ticket__body">
+          <div class="ticket__speaker-label">Speaker</div>
+          <div class="ticket__title">${e.title}</div>
+          <div class="ticket__abstract">${e.abstract}</div>
+          <div class="ticket__links">${links}</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  section.innerHTML = `
+    <div class="container">
+      <h2>Speaking</h2>
+      <div class="speaking-list">${ticketsHTML}</div>
+    </div>`;
+}
+
+
 async function generateArticleTiles() {
   const response = await fetch('data/articles.json');
   const articles = await response.json();
