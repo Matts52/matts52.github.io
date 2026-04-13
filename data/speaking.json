@@ -1,0 +1,16 @@
+[
+  {
+    "event": "Snowflake Summit 2026",
+    "eventLogo": "assets/icons/snowflake.svg",
+    "title": "Self-Healing Semantic Layers with Snowflake Cortex AI: How Sigma Built J.A.K.E.",
+    "abstract": "How Sigma built J.A.K.E., a production Cortex AI agent embedded in Slack and Sigma that self-heals semantic layers by automatically generating Snowflake semantic views from dbt metadata, debugging query failures in real time, and patching definitions to create a continuous learning loop.",
+    "date": "June 2026",
+    "location": "San Francisco, CA",
+    "upcoming": true,
+    "links": {
+      "eventPage": "https://reg.snowflake.com/flow/snowflake/summit26/sessions/page/catalog/session/1767825886058001MnA1",
+      "slides": null,
+      "recording": null
+    }
+  }
+]
