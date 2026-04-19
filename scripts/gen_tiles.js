@@ -141,6 +141,29 @@ async function generateExperienceTiles() {
       </div>
     </div>
   `;
+
+  // Per-card scroll reveal
+  const entries = container.querySelectorAll('.timeline-entry');
+  const cardObserver = new IntersectionObserver((observations) => {
+    observations.forEach(obs => {
+      if (!obs.isIntersecting) return;
+      const card = obs.target.querySelector('.timeline-card');
+      if (card) {
+        card.classList.add('card-visible');
+        card.addEventListener('animationend', () => {
+          card.classList.remove('card-visible');
+          card.style.opacity = '1';
+        }, { once: true });
+      }
+      cardObserver.unobserve(obs.target);
+    });
+  }, { threshold: 0.15 });
+
+  entries.forEach((entry, i) => {
+    const card = entry.querySelector('.timeline-card');
+    if (card) card.style.animationDelay = `${i * 0.08}s`;
+    cardObserver.observe(entry);
+  });
 }
 
 

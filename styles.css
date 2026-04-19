@@ -899,6 +899,37 @@ a.card-link {
   margin-top: var(--space-3);
 }
 
+/* --- Scroll reveal keyframes --- */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.timeline-entry--left .timeline-card,
+.timeline-entry--right .timeline-card {
+  opacity: 0;
+}
+
+.timeline-entry--left .timeline-card.card-visible {
+  animation: slideInLeft 0.55s var(--ease) both;
+}
+
+.timeline-entry--right .timeline-card.card-visible {
+  animation: slideInRight 0.55s var(--ease) both;
+}
+
+@media (max-width: 768px) {
+  .timeline-entry--right .timeline-card.card-visible {
+    animation: slideInLeft 0.55s var(--ease) both;
+  }
+}
+
+
 @media (max-width: 768px) {
   .timeline::before {
     left: 19px;
