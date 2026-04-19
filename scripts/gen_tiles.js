@@ -69,33 +69,34 @@ async function generateEducationTiles() {
   const education = await response.json();
   const container = document.querySelector("#education");
 
+  const courseRow = (course) =>
+    `<div class="edu-course"><span class="edu-course__name">${course.name}</span><span class="edu-course__grade">${course.grade}</span></div>`;
+
   container.innerHTML = `
     <div class="container">
       <h2>Education</h2>
-      <div class="grid">
+      <div class="edu-grid">
         ${education.map(edu => `
-          <div class="card">
-            <div class="card__body">
-              <img class="card__img" src="${edu.logoSrc}" alt="${edu.institution}">
-              <h4 class="card__title">${edu.degree}</h4>
-              <p class="card__subtitle">${edu.institution}</p>
-              <p class="card__text">${edu.description}</p>
-              <p class="card__text" style="font-weight:600; margin-bottom: 0.5rem;"><u>Course Highlights</u></p>
-              <ul class="card__list">
-                ${edu.courseHighlights ? edu.courseHighlights.map(h => `<li>${h}</li>`).join('') : ''}
-              </ul>
-              ${edu.courseHighlightsEconomics ? `
-                <p class="card__text" style="font-weight:600; margin-bottom: 0.5rem; margin-top: 0.5rem;"><u>Course Highlights (Economics)</u></p>
-                <ul class="card__list">
-                  ${edu.courseHighlightsEconomics.map(h => `<li>${h}</li>`).join('')}
-                </ul>
-              ` : ''}
-              ${edu.courseHighlightsComputerScience ? `
-                <p class="card__text" style="font-weight:600; margin-bottom: 0.5rem; margin-top: 0.5rem;"><u>Course Highlights (Computer Science)</u></p>
-                <ul class="card__list">
-                  ${edu.courseHighlightsComputerScience.map(h => `<li>${h}</li>`).join('')}
-                </ul>
-              ` : ''}
+          <div class="card edu-card">
+            <div class="edu-card__header">
+              <img class="edu-card__logo" src="${edu.logoSrc}" alt="${edu.institution}">
+              <div class="edu-card__meta">
+                <h4 class="edu-card__degree">${edu.degree}</h4>
+                <p class="edu-card__institution">${edu.institution}</p>
+                <p class="edu-card__date">${edu.date}</p>
+              </div>
+            </div>
+            <div class="edu-card__courses">
+              <div class="edu-card__split">
+                ${edu.courseGroups.map(group => `
+                  <div>
+                    <p class="edu-card__label">${group.label}</p>
+                    <div class="edu-course-list">
+                      ${group.courses.map(courseRow).join('')}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
             </div>
           </div>
         `).join('')}

@@ -117,10 +117,10 @@ Sections start invisible (`opacity: 0; transform: translateY(20px)`). The `Inter
 
 | Section ID | Layout | Data file | Notable fields |
 |---|---|---|---|
-| `#title` | Hero grid (manual) | — | Static HTML |
-| `#about-me` | Manual prose + icon rows | — | Static HTML |
-| `#experience` | Alternating left/right timeline | `experience.json` | `company`, `logoSrc`, `position`, `date`, `description` (array for bullets) |
-| `#education` | Card grid | `education.json` | `logoSrc`, `degree`, `institution`, `courseHighlights` |
+| `#title` | Hero grid (manual) | — | Static HTML; `.name` at 5.5rem; `.subtitle` is Spectral italic tagline |
+| `#about-me` | Terminal block + icon rows | — | Static HTML; dark terminal aesthetic regardless of light/dark mode |
+| `#experience` | Grouped employer accordion | `experience.json` | `company`, `logoSrc`, `position`, `date`, `description` (array); roles grouped by company, expandable |
+| `#education` | Two-column card grid | `education.json` | `logoSrc`, `degree`, `institution`, `date`, `courseGroups` (array of `{ label, courses: [{ name, grade }] }`) |
 | `#projects` | Card grid with images | `projects.json` | `display: "true"` to show, `githubLink`, `imageSrc`, `demoLink` |
 | `#papers` | Card grid with images | `papers.json` | `githubLink`, `imageSrc`, `pdfLink` |
 | `#speaking` | Ticket cards (dashed border) | `speaking.json` | `event`, `eventLogo`, `title`, `abstract`, `date`, `location`, `upcoming`, `links.{eventPage,slides,recording}` |
@@ -128,6 +128,49 @@ Sections start invisible (`opacity: 0; transform: translateY(20px)`). The `Inter
 | `#contact` | 4-column icon grid | `contact.json` | `iconSrc`, `title`, `link` |
 
 **Current nav order:** About → Experience → Education → Projects → Speaking → Papers → Articles → Social → Resume
+
+---
+
+## Hero Section
+
+- `.name` is 5.5rem desktop / 3.25rem mobile, `letter-spacing: -0.04em`, `line-height: 1.0`
+- `.subtitle` is Spectral italic in `var(--text-muted)` — used as a punchy tagline, not the job title
+- Job title lives in `.credential` alongside degrees and location
+- Hero `min-height` is `92vh`
+
+---
+
+## About Section (Terminal Block)
+
+The about section uses a terminal aesthetic — always dark regardless of light/dark mode:
+
+- `.terminal` — dark card with macOS traffic-light titlebar (`.terminal__bar` with `#2a2c2e` background)
+- `.terminal__body` — `#1a1c1e` background, monospace font stack (`SF Mono`, `Fira Code`, `Menlo`)
+- Structure: `>` prompt + command label, then `.terminal__line` key-value rows indented below
+- `.terminal__key` — blue (`#7ecfff`); `.terminal__sep` — dimmed; values in muted grey
+- `.terminal__cursor` — green blinking `▌` at the end
+- Followed by `.icon-rows` tech stack icons (unchanged)
+
+---
+
+## Experience Section
+
+Roles are grouped by employer. Each group has a left column (logo + company name, centered) and a right column of accordion rows.
+
+- `.exp-group` — two-column grid: `160px` label column + `1fr` roles column
+- `.exp-role__toggle` — button row: role title left, date right, chevron indicator
+- `.exp-role--open` — class toggled by click; shows `.exp-role__bullets` and rotates chevron
+- First role of first group opens by default
+- Dark mode logo invert: applied to all logos **except** `utoronto` and `usask` (those logos are already visible in dark mode)
+
+---
+
+## Education Section
+
+- `.edu-grid` — `repeat(auto-fit, minmax(340px, 1fr))`
+- Each `.edu-card` has a header (logo + degree + institution + date) and a course section
+- Courses use `courseGroups`: array of `{ label, courses: [{ name, grade }] }` — always rendered as a two-column split (`.edu-card__split`)
+- `.edu-course` — flex row with name left-aligned, grade right-aligned in accent green
 
 ---
 
