@@ -1,17 +1,15 @@
 [
   {
     "title": "Bearish or Bullish",
+    "tagline": "Predicting market fluctuation indicators from WSJ language attention and sentiment using LDA, RoBERTa, and Lasso regression.",
     "githubLink": "https://github.com/Matts52/Bearish-or-Bullish",
-    "imageSrc": "assets/projects/Bearish_or_Bullish.jpg",
-    "description": "Explores the predictive capacity of Wall Street Journal language and sentiment on key market fluctuation indicators. Combines LDA topic modelling, RoBERTa sentiment analysis, and Lasso regression to forecast market movement.",
     "tags": ["NLP", "LDA", "RoBERTa", "Lasso", "Finance"],
     "pdfLink": "assets/papers/Bearish_or_Bullish.pdf"
   },
   {
     "title": "Money is Motivation",
+    "tagline": "Examining intrateam salary dispersion as a predictor of game-level NBA outcomes via per-minute salary metrics and Random Forests.",
     "githubLink": "https://github.com/Matts52/Money-is-Motivation",
-    "imageSrc": "assets/projects/Money_is_Motivation.jpg",
-    "description": "Investigates whether intrateam salary dispersion predicts game-level NBA outcomes as a proxy for firm performance under varying pay distributions. Constructs per-minute salary dispersion metrics from scraped game logs and applies Random Forests to predict results.",
     "tags": ["Random Forest", "Sports Analytics", "Causal Inference", "Web Scraping"],
     "pdfLink": "assets/papers/Money_is_Motivation.pdf"
   }
