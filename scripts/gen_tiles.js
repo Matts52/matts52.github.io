@@ -110,59 +110,59 @@ async function generateExperienceTiles() {
   const experience = await response.json();
   const container = document.querySelector("#experience");
 
+  // Group roles by company, preserving first-appearance order
+  const groups = [];
+  const groupIndex = {};
+  experience.forEach(exp => {
+    if (groupIndex[exp.company] === undefined) {
+      groupIndex[exp.company] = groups.length;
+      groups.push({ company: exp.company, logoSrc: exp.logoSrc, roles: [] });
+    }
+    groups[groupIndex[exp.company]].roles.push(exp);
+  });
+
   container.innerHTML = `
     <div class="container">
       <h2>Experience</h2>
-      <div class="timeline">
-        ${experience.map((exp, i) => {
-          const side = i % 2 === 0 ? 'left' : 'right';
-          const card = `
-            <div class="timeline-card">
-              <img class="timeline-logo" src="${exp.logoSrc}" alt="${exp.company}">
-              <h4 class="card__title">${exp.position}</h4>
-              <p class="card__subtitle">${exp.company}</p>
-              <p class="timeline-date">${exp.date}</p>
-              ${Array.isArray(exp.description)
-                ? `<ul class="card__list timeline-description">
-                     ${exp.description.map(pt => `<li>${pt}</li>`).join('')}
-                   </ul>`
-                : `<p class="card__text timeline-description">${exp.description}</p>`
-              }
+      <div class="exp-list">
+        ${groups.map((group, gi) => `
+          <div class="exp-group">
+            <div class="exp-group__header">
+              <img class="exp-group__logo" src="${group.logoSrc}" alt="${group.company}">
+              <span class="exp-group__company">${group.company}</span>
             </div>
-          `;
-          return `
-            <div class="timeline-entry timeline-entry--${side}">
-              <div class="timeline-left">${side === 'left' ? card : ''}</div>
-              <div class="timeline-dot-wrapper"><div class="timeline-dot"></div></div>
-              <div class="timeline-right">${side === 'right' ? card : ''}</div>
+            <div class="exp-group__roles">
+              ${group.roles.map((role, ri) => {
+                const bullets = Array.isArray(role.description)
+                  ? role.description.map(b => `<li>${b}</li>`).join('')
+                  : `<li>${role.description}</li>`;
+                const isOpen = gi === 0 && ri === 0;
+                return `
+                  <div class="exp-role ${isOpen ? 'exp-role--open' : ''}">
+                    <button class="exp-role__toggle" aria-expanded="${isOpen}">
+                      <span class="exp-role__title">${role.position}</span>
+                      <span class="exp-role__date">${role.date}</span>
+                      <svg class="exp-role__chevron" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <ul class="exp-role__bullets">${bullets}</ul>
+                  </div>
+                `;
+              }).join('')}
             </div>
-          `;
-        }).join('')}
+          </div>
+        `).join('')}
       </div>
     </div>
   `;
 
-  // Per-card scroll reveal
-  const entries = container.querySelectorAll('.timeline-entry');
-  const cardObserver = new IntersectionObserver((observations) => {
-    observations.forEach(obs => {
-      if (!obs.isIntersecting) return;
-      const card = obs.target.querySelector('.timeline-card');
-      if (card) {
-        card.classList.add('card-visible');
-        card.addEventListener('animationend', () => {
-          card.classList.remove('card-visible');
-          card.style.opacity = '1';
-        }, { once: true });
-      }
-      cardObserver.unobserve(obs.target);
+  container.querySelectorAll('.exp-role__toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const role = btn.closest('.exp-role');
+      const isOpen = role.classList.toggle('exp-role--open');
+      btn.setAttribute('aria-expanded', isOpen);
     });
-  }, { threshold: 0.15 });
-
-  entries.forEach((entry, i) => {
-    const card = entry.querySelector('.timeline-card');
-    if (card) card.style.animationDelay = `${i * 0.08}s`;
-    cardObserver.observe(entry);
   });
 }
 
