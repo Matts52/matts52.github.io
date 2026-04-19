@@ -40,20 +40,21 @@ async function generatePaperTiles() {
   container.innerHTML = `
     <div class="container">
       <h2>Papers</h2>
-      <div class="grid">
+      <div class="paper-list">
         ${papers.map(paper => `
-          <div class="card">
-            <div class="card__img-wrapper">
-              <a href="${paper.githubLink}" target="_blank">
-                <img src="assets/icons/github.svg" class="github-icon" alt="GitHub">
-              </a>
-              <img class="card__img--large" src="${paper.imageSrc}" alt="${paper.title}">
+          <div class="paper-row">
+            <div class="paper-row__image">
+              <img src="${paper.imageSrc}" alt="${paper.title}">
             </div>
-            <div class="card__body">
-              <h4 class="card__title">${paper.title}</h4>
-              <p class="card__text">${paper.description}</p>
-              <div class="card__actions">
-                <a href="${paper.pdfLink}" class="btn-accent" target="_blank">Read</a>
+            <div class="paper-row__body">
+              <h4 class="paper-row__title">${paper.title}</h4>
+              <p class="paper-row__description">${paper.description}</p>
+              <div class="paper-row__tags">
+                ${paper.tags.map(t => `<span class="paper-tag">${t}</span>`).join('')}
+              </div>
+              <div class="paper-row__actions">
+                <a href="${paper.pdfLink}" class="btn-accent btn-sm" target="_blank">Read Paper</a>
+                <a href="${paper.githubLink}" class="btn-ghost btn-sm" target="_blank">GitHub</a>
               </div>
             </div>
           </div>
