@@ -255,10 +255,14 @@ async function generateArticleTiles() {
   container.innerHTML = `
     <div class="container">
       <h2>Articles</h2>
+      <div class="ticker-rule"></div>
     </div>
     <div class="ticker-wrapper">
       <div class="ticker-track">${track}${track}</div>
       <div class="ticker-tooltip" id="ticker-tooltip"></div>
+    </div>
+    <div class="container">
+      <div class="ticker-rule"></div>
     </div>
   `;
 

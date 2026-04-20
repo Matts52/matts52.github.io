@@ -1161,13 +1161,6 @@ a.card-link {
   width: 100%;
   overflow: hidden;
   padding: var(--space-5) 0;
-  background:
-    linear-gradient(var(--divider), var(--divider))
-      calc((100% - 1100px) / 2 + var(--space-5)) 0 /
-      min(1100px - var(--space-5) * 2, 100% - var(--space-5) * 2) 1px no-repeat,
-    linear-gradient(var(--divider), var(--divider))
-      calc((100% - 1100px) / 2 + var(--space-5)) 100% /
-      min(1100px - var(--space-5) * 2, 100% - var(--space-5) * 2) 1px no-repeat;
 }
 
 .ticker-wrapper::before,
@@ -1190,6 +1183,11 @@ a.card-link {
 .ticker-wrapper::after {
   right: 0;
   background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.ticker-rule {
+  height: 1px;
+  background: var(--divider);
 }
 
 .ticker-track {
