@@ -33,6 +33,16 @@
     ]
   },
   {
+    "company": "University of Saskatchewan",
+    "logoSrc": "assets/companies/usask-logo.png",
+    "position": "Specialist (Course Development)",
+    "date": "November 2024 - March 2025",
+    "description": [
+      "Developed grading rubrics, assignment descriptions, and syllabus for a new course offering proposal",
+      "Collaborated with faculty members to ensure material was relevant and aligned with educational standards"
+    ]
+  },
+  {
     "company": "7shifts",
     "logoSrc": "assets/companies/7shifts-rebrand.svg",
     "position": "Senior Data Analyst",
