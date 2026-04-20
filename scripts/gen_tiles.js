@@ -232,47 +232,59 @@ async function generateSpeakingTiles() {
 async function generateArticleTiles() {
   const response = await fetch('data/articles.json');
   const articles = await response.json();
-  const visibleMedium = articles.medium.filter(article => article.show);
-  const visibleSubstack = articles.substack.filter(article => article.show);
   const container = document.querySelector("#articles");
+
+  const all = [
+    ...articles.medium.filter(a => a.show).map(a => ({ ...a, platform: 'Medium' })),
+    ...articles.substack.filter(a => a.show).map(a => ({ ...a, platform: 'Substack' }))
+  ].sort((a, b) => {
+    if (!a.published_date) return 1;
+    if (!b.published_date) return -1;
+    return new Date(b.published_date) - new Date(a.published_date);
+  });
+
+  const itemHTML = (a) => `
+    <a class="ticker-item ticker-item--${a.platform.toLowerCase()}" href="${a.link}" target="_blank" data-desc="${a.description.replace(/"/g, '&quot;')}">
+      <span class="ticker-item__badge">${a.platform}</span>
+      <span class="ticker-item__title">${a.title}</span>
+    </a>
+  `;
+
+  const track = all.map(itemHTML).join('');
 
   container.innerHTML = `
     <div class="container">
       <h2>Articles</h2>
-      <div class="articles-grid">
-        <div class="card article-card--medium">
-          <div class="card__header">
-            <img src="assets/icons/new_medium_logo.svg" alt="Medium" class="platform-logo">
-            <h4 class="card__title">Medium</h4>
-          </div>
-          <div class="card__body">
-            ${visibleMedium.map(article => `
-              <div class="article-item">
-                <a href="${article.link}" target="_blank" class="article-link">
-                  ${article.title}
-                </a>
-                <p class="article-desc">${article.description}</p>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-        <div class="card article-card--substack">
-          <div class="card__header">
-            <img src="assets/icons/substack.svg" alt="Substack" class="platform-logo">
-            <h4 class="card__title">Substack</h4>
-          </div>
-          <div class="card__body">
-            ${visibleSubstack.map(article => `
-              <div class="article-item">
-                <a href="${article.link}" target="_blank" class="article-link">
-                  ${article.title}
-                </a>
-                <p class="article-desc">${article.description}</p>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="ticker-wrapper">
+      <div class="ticker-track">${track}${track}</div>
+      <div class="ticker-tooltip" id="ticker-tooltip"></div>
     </div>
   `;
+
+  const tickerTrack = container.querySelector('.ticker-track');
+  const tooltip = container.querySelector('#ticker-tooltip');
+  const wrapper = container.querySelector('.ticker-wrapper');
+
+  tickerTrack.querySelectorAll('.ticker-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      tickerTrack.style.animationPlayState = 'paused';
+      tooltip.textContent = item.dataset.desc;
+      tooltip.classList.add('ticker-tooltip--visible');
+    });
+
+    item.addEventListener('mousemove', (e) => {
+      const wRect = wrapper.getBoundingClientRect();
+      const tipW = 280;
+      let left = e.clientX - wRect.left + 16;
+      if (left + tipW > wRect.width) left = e.clientX - wRect.left - tipW - 16;
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = (e.clientY - wRect.top - 72) + 'px';
+    });
+
+    item.addEventListener('mouseleave', () => {
+      tickerTrack.style.animationPlayState = 'running';
+      tooltip.classList.remove('ticker-tooltip--visible');
+    });
+  });
 }
