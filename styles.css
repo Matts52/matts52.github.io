@@ -884,6 +884,75 @@ a.card-link {
   position: relative;
 }
 
+/* ===========================
+   PROJECT CARDS
+   =========================== */
+
+/* Scatter: allow chars to escape card bounds */
+.proj-card {
+  overflow: visible;
+}
+
+.proj-card__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--bg);
+  border-radius: 12px 12px 0 0;
+}
+
+.proj-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+
+.proj-card:hover .proj-card__img {
+  transform: scale(1.04);
+}
+
+.proj-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.proj-card:hover .proj-card__overlay {
+  opacity: 1;
+}
+
+.proj-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.proj-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.proj-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
 
 /* ===========================
    EDUCATION SECTION

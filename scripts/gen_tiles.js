@@ -10,25 +10,90 @@ async function generateProjectTiles() {
       <h2>Projects</h2>
       <div class="grid">
         ${visibleProjects.map(project => `
-          <div class="card">
-            <div class="card__img-wrapper">
-              <a href="${project.githubLink}" target="_blank">
-                <img src="assets/icons/github.svg" class="github-icon" alt="GitHub">
-              </a>
-              <img class="card__img--large" src="${project.imageSrc}" alt="${project.title}">
+          <div class="card proj-card">
+            <div class="proj-card__media">
+              <img class="proj-card__img" src="${project.imageSrc}" alt="${project.title}">
+              <div class="proj-card__overlay">
+                <a href="${project.githubLink}" class="btn-ghost btn-sm" target="_blank">GitHub</a>
+                <a href="${project.demoLink}" class="btn-accent btn-sm" target="_blank">Live Demo</a>
+              </div>
             </div>
             <div class="card__body">
+              <div class="proj-card__tags">
+                ${project.tags.map(t => `<span class="proj-tag">${t}</span>`).join('')}
+              </div>
               <h4 class="card__title">${project.title}</h4>
               <p class="card__text">${project.description}</p>
-              <div class="card__actions">
-                <a href="${project.demoLink}" class="btn-accent" target="_blank">Show Me</a>
-              </div>
             </div>
           </div>
         `).join('')}
       </div>
     </div>
   `;
+
+  requestAnimationFrame(() => initProjectScatter(container));
+}
+
+function initProjectScatter(container) {
+  if (!window.gsap) return;
+
+  const section = document.getElementById('projects');
+  const titles = container.querySelectorAll('.card__title');
+
+  titles.forEach(title => {
+    const text = title.textContent;
+    title.innerHTML = [...text].map(char =>
+      char === ' ' ? ' ' : `<span class="proj-char">${char}</span>`
+    ).join('');
+  });
+
+  const allChars = [...container.querySelectorAll('.proj-char')];
+
+  const scatter = allChars.map(() => ({
+    x: (Math.random() - 0.5) * 900,
+    y: (Math.random() - 0.5) * 500,
+    r: (Math.random() - 0.5) * 540,
+    o: Math.random() * 0.25 + 0.1
+  }));
+
+  allChars.forEach((char, i) => {
+    gsap.set(char, { x: scatter[i].x, y: scatter[i].y, rotation: scatter[i].r, opacity: scatter[i].o });
+  });
+
+  let assembled = false;
+
+  const obs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !assembled) {
+      assembled = true;
+      titles.forEach((title, ti) => {
+        [...title.querySelectorAll('.proj-char')].forEach((char, ci) => {
+          gsap.to(char, {
+            x: 0, y: 0, rotation: 0, opacity: 1,
+            duration: 0.75,
+            ease: 'power3.out',
+            delay: ti * 0.18 + ci * 0.016
+          });
+        });
+      });
+    } else if (!entries[0].isIntersecting && assembled) {
+      assembled = false;
+      scatter.forEach(d => {
+        d.x = (Math.random() - 0.5) * 900;
+        d.y = (Math.random() - 0.5) * 500;
+        d.r = (Math.random() - 0.5) * 540;
+      });
+      allChars.forEach((char, i) => {
+        gsap.to(char, {
+          x: scatter[i].x, y: scatter[i].y, rotation: scatter[i].r, opacity: scatter[i].o,
+          duration: 0.45,
+          ease: 'power2.in',
+          delay: i * 0.005
+        });
+      });
+    }
+  }, { threshold: 0.1 });
+
+  obs.observe(section);
 }
 
 
