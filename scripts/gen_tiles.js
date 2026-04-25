@@ -1,8 +1,12 @@
 
+async function fetchJSON(url) {
+  return fetch(url).then(r => r.json());
+}
+
+
 async function generateProjectTiles() {
-  const response = await fetch('data/projects.json');
-  const projects = await response.json();
-  const container = document.getElementById("projects");
+  const projects = await fetchJSON('data/projects.json');
+  const container = document.querySelector("#projects");
   const visibleProjects = projects.filter(project => project.display === "true");
 
   container.innerHTML = `
@@ -37,7 +41,6 @@ async function generateProjectTiles() {
 function initProjectScatter(container) {
   if (!window.gsap) return;
 
-  const section = document.getElementById('projects');
   const titles = container.querySelectorAll('.card__title');
 
   titles.forEach(title => {
@@ -81,6 +84,7 @@ function initProjectScatter(container) {
         d.x = (Math.random() - 0.5) * 900;
         d.y = (Math.random() - 0.5) * 500;
         d.r = (Math.random() - 0.5) * 540;
+        d.o = Math.random() * 0.25 + 0.1;
       });
       allChars.forEach((char, i) => {
         gsap.to(char, {
@@ -93,13 +97,12 @@ function initProjectScatter(container) {
     }
   }, { threshold: 0.1 });
 
-  obs.observe(section);
+  obs.observe(container);
 }
 
 
 async function generatePaperTiles() {
-  const response = await fetch('data/papers.json');
-  const papers = await response.json();
+  const papers = await fetchJSON('data/papers.json');
   const container = document.querySelector("#papers");
 
   container.innerHTML = `
@@ -129,8 +132,7 @@ async function generatePaperTiles() {
 
 
 async function generateEducationTiles() {
-  const response = await fetch('data/education.json');
-  const education = await response.json();
+  const education = await fetchJSON('data/education.json');
   const container = document.querySelector("#education");
 
   const courseRow = (course) =>
@@ -171,11 +173,9 @@ async function generateEducationTiles() {
 
 
 async function generateExperienceTiles() {
-  const response = await fetch('data/experience.json');
-  const experience = await response.json();
+  const experience = await fetchJSON('data/experience.json');
   const container = document.querySelector("#experience");
 
-  // Group roles by company, preserving first-appearance order
   const groups = [];
   const groupIndex = {};
   experience.forEach(exp => {
@@ -236,8 +236,7 @@ async function generateExperienceTiles() {
 
 
 async function generateContactTiles() {
-  const response = await fetch('data/contact.json');
-  const contacts = await response.json();
+  const contacts = await fetchJSON('data/contact.json');
   const container = document.querySelector("#contact");
 
   container.innerHTML = `
@@ -261,8 +260,7 @@ async function generateContactTiles() {
 
 
 async function generateSpeakingTiles() {
-  const response = await fetch('data/speaking.json');
-  const engagements = await response.json();
+  const engagements = await fetchJSON('data/speaking.json');
   const section = document.querySelector('#speaking');
 
   const ticketsHTML = engagements.map(e => {
@@ -298,8 +296,7 @@ async function generateSpeakingTiles() {
 
 
 async function generateArticleTiles() {
-  const response = await fetch('data/articles.json');
-  const articles = await response.json();
+  const articles = await fetchJSON('data/articles.json');
   const container = document.querySelector("#articles");
 
   const sortByDate = arr => [...arr].sort((a, b) => {
