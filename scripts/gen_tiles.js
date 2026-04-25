@@ -299,61 +299,53 @@ async function generateArticleTiles() {
   const articles = await response.json();
   const container = document.querySelector("#articles");
 
-  const all = [
-    ...articles.medium.filter(a => a.show).map(a => ({ ...a, platform: 'Medium' })),
-    ...articles.substack.filter(a => a.show).map(a => ({ ...a, platform: 'Substack' }))
-  ].sort((a, b) => {
+  const sortByDate = arr => [...arr].sort((a, b) => {
     if (!a.published_date) return 1;
     if (!b.published_date) return -1;
     return new Date(b.published_date) - new Date(a.published_date);
   });
 
-  const itemHTML = (a) => `
-    <a class="ticker-item ticker-item--${a.platform.toLowerCase()}" href="${a.link}" target="_blank" data-desc="${a.description.replace(/"/g, '&quot;')}">
-      <span class="ticker-item__badge">${a.platform}</span>
-      <span class="ticker-item__title">${a.title}</span>
+  const formatDate = d => d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : '';
+
+  const cardHTML = (a) => `
+    <a class="article-card" href="${a.link}" target="_blank" rel="noopener">
+      <span class="article-card__title">${a.title}</span>
+      <div class="article-card__meta">
+        <span class="article-card__topic">${a.topic}</span>
+        <span class="article-card__date">${formatDate(a.published_date)}</span>
+      </div>
     </a>
   `;
 
-  const track = all.map(itemHTML).join('');
+  const mediumArticles = sortByDate(articles.medium.filter(a => a.show));
+  const substackArticles = sortByDate(articles.substack.filter(a => a.show));
 
   container.innerHTML = `
     <div class="container">
       <h2>Articles</h2>
-      <div class="ticker-rule"></div>
-    </div>
-    <div class="ticker-wrapper">
-      <div class="ticker-track">${track}${track}</div>
-      <div class="ticker-tooltip" id="ticker-tooltip"></div>
-    </div>
-    <div class="container">
-      <div class="ticker-rule"></div>
+      <div class="articles-tabs">
+        <button class="articles-tab articles-tab--active" data-tab="medium">
+          Medium <span class="articles-tab__count">${mediumArticles.length}</span>
+        </button>
+        <button class="articles-tab articles-tab--substack" data-tab="substack">
+          Substack <span class="articles-tab__count">${substackArticles.length}</span>
+        </button>
+      </div>
+      <div class="articles-panel" id="articles-panel-medium">
+        <div class="articles-grid">${mediumArticles.map(cardHTML).join('')}</div>
+      </div>
+      <div class="articles-panel articles-panel--hidden" id="articles-panel-substack">
+        <div class="articles-grid">${substackArticles.map(cardHTML).join('')}</div>
+      </div>
     </div>
   `;
 
-  const tickerTrack = container.querySelector('.ticker-track');
-  const tooltip = container.querySelector('#ticker-tooltip');
-  const wrapper = container.querySelector('.ticker-wrapper');
-
-  tickerTrack.querySelectorAll('.ticker-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      tickerTrack.style.animationPlayState = 'paused';
-      tooltip.textContent = item.dataset.desc;
-      tooltip.classList.add('ticker-tooltip--visible');
-    });
-
-    item.addEventListener('mousemove', (e) => {
-      const wRect = wrapper.getBoundingClientRect();
-      const tipW = 280;
-      let left = e.clientX - wRect.left + 16;
-      if (left + tipW > wRect.width) left = e.clientX - wRect.left - tipW - 16;
-      tooltip.style.left = left + 'px';
-      tooltip.style.top = (e.clientY - wRect.top - 72) + 'px';
-    });
-
-    item.addEventListener('mouseleave', () => {
-      tickerTrack.style.animationPlayState = 'running';
-      tooltip.classList.remove('ticker-tooltip--visible');
+  container.querySelectorAll('.articles-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      container.querySelectorAll('.articles-tab').forEach(t => t.classList.remove('articles-tab--active'));
+      container.querySelectorAll('.articles-panel').forEach(p => p.classList.add('articles-panel--hidden'));
+      tab.classList.add('articles-tab--active');
+      container.querySelector(`#articles-panel-${tab.dataset.tab}`).classList.remove('articles-panel--hidden');
     });
   });
 }

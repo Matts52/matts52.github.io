@@ -85,7 +85,7 @@
     "link": "https://medium.com/data-science/measuring-cross-product-adoption-using-dbt-set-similarity-fdf7c1f88bc2",
     "description": "Using the Jaccard Index and dbt_set_similarity to measure user overlap and cross-product adoption patterns.",
     "topic": "ML & Data Science",
-    "published_date": null,
+    "published_date": "2024-12-29",
     "show": true
   }
 ],
