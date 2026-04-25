@@ -188,7 +188,10 @@ async function generateExperienceTiles() {
 
   container.innerHTML = `
     <div class="container">
-      <h2>Experience</h2>
+      <div class="section-heading-row">
+        <h2>Experience</h2>
+        <a class="btn-ghost btn-sm" href="assets/files/Resume_Short.pdf" target="_blank" rel="noopener" id="resume-link">View Resume</a>
+      </div>
       <div class="exp-list">
         ${groups.map((group, gi) => `
           <div class="exp-group">
