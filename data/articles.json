@@ -91,6 +91,14 @@
 ],
 "substack": [
   {
+    "title": "Analytics Engineers Should Take PARA Notes",
+    "link": "https://matthewsenick.substack.com/p/analytics-engineers-should-take-para",
+    "description": "Argues that analytics engineers should document their domain knowledge using the PARA framework, treating it as a professional asset — especially valuable when working with AI tools that need structured context.",
+    "topic": "Strategy & Leadership",
+    "published_date": "2026-04-26",
+    "show": true
+  },
+  {
     "title": "Why Spec-Driven Development is the New Wave in Analytics Engineering",
     "link": "https://matthewsenick.substack.com/p/why-spec-driven-development-is-the",
     "description": "Argues that analytics engineers winning with AI aren't writing less code — they're thinking more clearly before they write any, by investing in detailed specs before implementation.",
