@@ -1,5 +1,14 @@
 [
   {
+    "title": "Sigma Public - 2025/26 NHL Goalie Comparison",
+    "githubLink": null,
+    "imageSrc": "assets/projects/nhl_goalie_comparison.png",
+    "description": "An interactive Sigma workbook for comparing NHL goalie statistics side-by-side, with an AI-powered comparison agent and bio/stats breakdowns.",
+    "demoLink": "https://public.sigmacomputing.com/view-workbook?workbook=5uL4L4JchF3Z24zDazIcIN",
+    "tags": ["Sigma Computing", "Analytics", "Hockey"],
+    "display": "true"
+  },
+  {
     "title": "dbt Inline ML Preprocessing",
     "githubLink": "https://github.com/Matts52/dbt_ml_inline_preprocessing",
     "imageSrc": "assets/projects/dbt_ml_inline_preprocessing.png",

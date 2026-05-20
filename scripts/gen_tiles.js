@@ -18,7 +18,7 @@ async function generateProjectTiles() {
             <div class="proj-card__media">
               <img class="proj-card__img" src="${project.imageSrc}" alt="${project.title}">
               <div class="proj-card__overlay">
-                <a href="${project.githubLink}" class="btn-ghost btn-sm" target="_blank">GitHub</a>
+                ${project.githubLink ? `<a href="${project.githubLink}" class="btn-ghost btn-sm" target="_blank">GitHub</a>` : ''}
                 <a href="${project.demoLink}" class="btn-accent btn-sm" target="_blank">Live Demo</a>
               </div>
             </div>
