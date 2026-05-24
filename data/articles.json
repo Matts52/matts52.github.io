@@ -91,6 +91,14 @@
 ],
 "substack": [
   {
+    "title": "Lessons from My First 3,000 Contributions as a Senior Analytics Engineer",
+    "link": "https://matthewsenick.substack.com/p/lessons-from-my-first-3000-contributions",
+    "description": "Reflects on career growth as a senior analytics engineer — why systemic design, delegation, and cross-functional trust matter more than individual output.",
+    "topic": "Strategy & Leadership",
+    "published_date": "2026-05-24",
+    "show": true
+  },
+  {
     "title": "Analytics Engineers Should Take PARA Notes",
     "link": "https://matthewsenick.substack.com/p/analytics-engineers-should-take-para",
     "description": "Argues that analytics engineers should document their domain knowledge using the PARA framework, treating it as a professional asset — especially valuable when working with AI tools that need structured context.",
