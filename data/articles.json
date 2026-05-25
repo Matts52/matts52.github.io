@@ -1,6 +1,14 @@
 {
 "medium": [
   {
+    "title": "Stop Clicking \"Sync Connection\" in Sigma",
+    "link": "https://medium.com/data-engineer-things/stop-clicking-sync-connection-in-sigma-b6008ad6460f",
+    "description": "Explains how to automate Sigma connection syncs so you never have to manually trigger them again.",
+    "topic": "Analytics Engineering",
+    "published_date": "2026-05-25",
+    "show": true
+  },
+  {
     "title": "Automatically Dropping Orphaned Tables in dbt",
     "link": "https://medium.com/data-engineer-things/automatically-dropping-orphaned-tables-in-dbt-bb037984437a",
     "description": "Explains how to automatically identify and drop orphaned tables left behind in your data warehouse using dbt.",
