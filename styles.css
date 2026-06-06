@@ -1278,6 +1278,19 @@ a.card-link {
   color: #FF6719;
 }
 
+.articles-tab--sigma.articles-tab--active {
+  border-bottom-color: #FFCE00;
+}
+
+.articles-tab--sigma .articles-tab__count {
+  background: rgba(255, 206, 0, 0.12);
+  color: #b89800;
+}
+
+.dark-mode .articles-tab--sigma .articles-tab__count {
+  color: #FFCE00;
+}
+
 .articles-panel--hidden {
   display: none;
 }

@@ -319,6 +319,7 @@ async function generateArticleTiles() {
 
   const mediumArticles = sortByDate(articles.medium.filter(a => a.show));
   const substackArticles = sortByDate(articles.substack.filter(a => a.show));
+  const sigmaArticles = sortByDate(articles.sigma.filter(a => a.show));
 
   container.innerHTML = `
     <div class="container">
@@ -330,12 +331,18 @@ async function generateArticleTiles() {
         <button class="articles-tab articles-tab--substack" data-tab="substack">
           Substack <span class="articles-tab__count">${substackArticles.length}</span>
         </button>
+        <button class="articles-tab articles-tab--sigma" data-tab="sigma">
+          Sigma Blog <span class="articles-tab__count">${sigmaArticles.length}</span>
+        </button>
       </div>
       <div class="articles-panel" id="articles-panel-medium">
         <div class="articles-grid">${mediumArticles.map(cardHTML).join('')}</div>
       </div>
       <div class="articles-panel articles-panel--hidden" id="articles-panel-substack">
         <div class="articles-grid">${substackArticles.map(cardHTML).join('')}</div>
+      </div>
+      <div class="articles-panel articles-panel--hidden" id="articles-panel-sigma">
+        <div class="articles-grid">${sigmaArticles.map(cardHTML).join('')}</div>
       </div>
     </div>
   `;
