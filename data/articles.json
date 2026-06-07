@@ -149,11 +149,11 @@
 ],
 "sigma": [
   {
-    "title": "Manage Snowflake Semantic Views Directly in Sigma",
+    "title": "How Sigma's Data Platform Team Manages Snowflake Semantic Views",
     "link": "https://www.sigmacomputing.com/blog/manage-snowflake-semantic-views",
-    "description": "How Sigma lets you create, edit, and manage Snowflake semantic views directly inside the Sigma UI without writing SQL or leaving your analytics workflow.",
+    "description": "How Sigma lets you leverage Snowflake semantic views directly inside the Sigma UI without writing SQL or leaving your analytics workflow.",
     "topic": "Analytics Engineering",
-    "published_date": "2026-06-01",
+    "published_date": "2026-05-27",
     "show": true
   }
 ]
