@@ -155,6 +155,14 @@
     "topic": "Analytics Engineering",
     "published_date": "2026-05-27",
     "show": true
+  },
+  {
+    "title": "Meet J.A.K.E.: How Sigma Structures their Comprehensive Cortex Agent",
+    "link": "https://www.sigmacomputing.com/blog/meet-jake-sigma-cortex-agent",
+    "description": "How Sigma's internal Snowflake Cortex Agent combines Semantic Views and Cortex Search Services to build a structured knowledge layer for natural language querying across business domains.",
+    "topic": "Analytics Engineering",
+    "published_date": "2026-06-15",
+    "show": true
   }
 ]
 }
