@@ -24,7 +24,7 @@ Portfolio site for Matthew Senick. Deployed via GitHub Pages at `matthewsenick.c
 │   ├── education.json
 │   ├── projects.json
 │   ├── papers.json
-│   ├── articles.json   # Nested: { "medium": [...], "substack": [...] }
+│   ├── articles.json   # Nested: { "medium": [...], "substack": [...], "sigma": [...] }
 │   ├── speaking.json   # Flat array of speaking engagements
 │   └── contact.json
 │
@@ -212,6 +212,28 @@ python3 -m http.server
 No npm, no bundler, no compilation. Edit files and refresh.
 
 **Deployment**: push to `main` — GitHub Pages deploys automatically via the `CNAME` config.
+
+---
+
+## SEO Architecture
+
+### Static meta tags (index.html `<head>`)
+- `og:image` uses the profile photo at `assets/other/matthew-senick.png` (800×800)
+- `og:image:width/height/alt` and `og:site_name` are set alongside the main OG block
+- `twitter:card` is `summary` (not `summary_large_image`) because the profile image is square
+- `meta name="robots"` and `meta name="theme-color"` (#4CAF50) are explicit
+
+### JSON-LD structured data (index.html)
+The `<script type="application/ld+json">` in `<head>` contains an `@graph` with three schemas:
+- **Person** (`@id: #person`) — includes `worksFor` (Sigma Computing), `alumniOf`, `knowsAbout` (skills list), `hasOccupation`, and `sameAs` social links
+- **WebSite** (`@id: #website`) — site identity for Google; linked to Person via `author`
+- **Event** — one entry per speaking engagement; add a new object here when a new talk is added to `speaking.json`
+
+### Dynamic BlogPosting schema (index.js)
+`injectArticleSchema()` runs at page load, fetches `data/articles.json`, and injects a second `<script type="application/ld+json">` into `<head>` with a `BlogPosting` per visible article (all three tabs: medium, substack, sigma). Each BlogPosting references `{ "@id": "https://matthewsenick.com/#person" }` as its author. This function does not need updating when articles are added — it reads from the JSON automatically.
+
+### When adding a new speaking engagement
+Add the entry to `speaking.json` **and** add a corresponding `Event` object to the `@graph` JSON-LD block in `index.html`.
 
 ---
 

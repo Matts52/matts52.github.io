@@ -23,34 +23,96 @@
   <meta property="og:description" content="Portfolio of Matthew Senick (Matt Senick) — Senior Analytics Engineer. Data, design, and engineering.">
   <meta property="og:url" content="https://matthewsenick.com">
   <meta property="og:image" content="https://matthewsenick.com/assets/other/matthew-senick.png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Matthew Senick — Senior Analytics Engineer">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Matthew Senick">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Matthew Senick — Senior Analytics Engineer">
   <meta name="twitter:description" content="Portfolio of Matthew Senick (Matt Senick) — Senior Analytics Engineer. Data, design, and engineering.">
   <meta name="twitter:image" content="https://matthewsenick.com/assets/other/matthew-senick.png">
 
-  <!-- Structured data: Person schema for Google image search association -->
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#4CAF50">
+
+  <!-- Structured data: Person, WebSite, and Event schemas -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Matthew Senick",
-    "alternateName": "Matt Senick",
-    "url": "https://matthewsenick.com",
-    "image": "https://matthewsenick.com/assets/other/matthew-senick.png",
-    "jobTitle": "Senior Analytics Engineer",
-    "sameAs": [
-      "https://www.linkedin.com/in/matthew-senick/",
-      "https://github.com/Matts52",
-      "https://medium.com/@senick.matthew",
-      "https://substack.com/@matthewsenick"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://matthewsenick.com/#person",
+        "name": "Matthew Senick",
+        "alternateName": "Matt Senick",
+        "url": "https://matthewsenick.com",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://matthewsenick.com/assets/other/matthew-senick.png",
+          "width": 800,
+          "height": 800
+        },
+        "jobTitle": "Senior Analytics Engineer",
+        "description": "Senior Analytics Engineer specializing in dbt, Snowflake, and analytics infrastructure. Author of 18+ articles on analytics engineering.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Sigma Computing",
+          "url": "https://www.sigmacomputing.com"
+        },
+        "alumniOf": [
+          { "@type": "EducationalOrganization", "name": "University of Saskatchewan" },
+          { "@type": "EducationalOrganization", "name": "University of Toronto" }
+        ],
+        "knowsAbout": [
+          "Analytics Engineering", "dbt", "Snowflake", "SQL", "Python",
+          "R", "Data Engineering", "Machine Learning", "Business Intelligence",
+          "Sigma Computing", "PostgreSQL", "A/B Testing"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Analytics Engineer",
+          "occupationLocation": { "@type": "Country", "name": "Canada" }
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/matthew-senick/",
+          "https://github.com/Matts52",
+          "https://medium.com/@senick.matthew",
+          "https://substack.com/@matthewsenick"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://matthewsenick.com/#website",
+        "name": "Matthew Senick",
+        "url": "https://matthewsenick.com",
+        "description": "Portfolio of Matthew Senick (Matt Senick) — Senior Analytics Engineer",
+        "author": { "@id": "https://matthewsenick.com/#person" }
+      },
+      {
+        "@type": "Event",
+        "name": "Self-Healing Semantic Layers with Snowflake Cortex AI: How Sigma Built J.A.K.E.",
+        "startDate": "2026-06",
+        "location": {
+          "@type": "Place",
+          "name": "Snowflake Summit 2026",
+          "address": { "@type": "PostalAddress", "addressLocality": "San Francisco", "addressRegion": "CA" }
+        },
+        "description": "How Sigma built J.A.K.E., a production Cortex AI agent embedded in Slack and Sigma that self-heals semantic layers by automatically generating Snowflake semantic views from dbt metadata, debugging query failures in real time, and patching definitions to create a continuous learning loop.",
+        "organizer": { "@type": "Organization", "name": "Snowflake" },
+        "performer": { "@id": "https://matthewsenick.com/#person" },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "url": "https://reg.snowflake.com/flow/snowflake/summit26/sessions/page/catalog/session/1767825886058001MnA1"
+      }
     ]
   }
   </script>
 
   <title>Matthew Senick — Senior Analytics Engineer</title>
+
+  <link rel="preload" as="image" href="assets/other/matthew-senick.png">
 
   <!-- Google Fonts: Space Grotesk + Spectral -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
