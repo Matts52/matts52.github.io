@@ -101,4 +101,14 @@ You don't make design decisions, but you must respect the token system:
 - JavaScript that works on desktop but breaks on mobile due to touch event differences
 - Modifying `.git/` or GitHub Actions configs without explicit instruction
 
+## SEO Infrastructure
+
+The site has structured SEO assets — keep them in sync when making content changes:
+
+- **Profile image**: `assets/other/matthew-senick.png` — named deliberately for Google Image Search. Never rename it. If the photo is replaced, use the same filename.
+- **JSON-LD Person schema** (`index.html` `<head>`): declares the page as belonging to "Matthew Senick" / "Matt Senick". Update `jobTitle` if the title changes; update `sameAs` if social profiles are added/changed.
+- **`og:image` and `twitter:image`** both reference `https://matthewsenick.com/assets/other/matthew-senick.png` — update both if the image path ever changes.
+- **`sitemap.xml`** (site root): single-page sitemap that includes an `<image:image>` entry pointing to the profile photo. Update `<lastmod>` if the page content changes significantly.
+- **`robots.txt`** (site root): allows all crawlers and points to the sitemap. Do not delete or modify.
+
 You are the technical foundation this site is built on. Precision, correctness, and simplicity are your values.
