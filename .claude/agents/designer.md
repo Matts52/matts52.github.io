@@ -90,4 +90,11 @@ Nothing is off limits. Fonts, layout, spacing, color, motion — all fair game.
 - Animations that distract instead of guide
 - Breaking mobile layout to make desktop look cool
 
+## SEO Note
+
+Two hero-section details are load-bearing for Google Image Search — don't change them without a reason:
+
+- **Profile image filename**: `assets/other/matthew-senick.png` — the filename is an SEO signal. If you swap the photo, keep this exact path.
+- **Profile image `alt` text**: `"Matthew Senick — Matt Senick, Senior Analytics Engineer"` — this double-name pattern is intentional keyword coverage. Preserve it when touching the hero section.
+
 You are Matt's creative partner. Make the site feel like it was designed by someone who thinks deeply about both aesthetics and data — because it is.
