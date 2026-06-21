@@ -9,7 +9,29 @@ window.onload = function () {
   generateSpeakingTiles();
   generateArticleTiles();
   generateContactTiles();
+
+  injectArticleSchema();
 };
+
+async function injectArticleSchema() {
+  const data = await fetch('data/articles.json').then(r => r.json());
+  const allArticles = [
+    ...data.medium.filter(a => a.show),
+    ...data.substack.filter(a => a.show),
+    ...(data.sigma || []).filter(a => a.show)
+  ];
+  const schemas = allArticles.map(a => ({
+    "@type": "BlogPosting",
+    "headline": a.title,
+    "url": a.link,
+    "datePublished": a.published_date,
+    "author": { "@id": "https://matthewsenick.com/#person" }
+  }));
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify({ "@context": "https://schema.org", "@graph": schemas });
+  document.head.appendChild(script);
+}
 
 
 /*** Section fade-in with IntersectionObserver ***/
