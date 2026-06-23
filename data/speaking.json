@@ -1,5 +1,19 @@
 [
   {
+    "event": "Sigma Computing Webinar",
+    "eventLogo": "assets/companies/sigma-computing.svg",
+    "title": "Self-Healing Semantic Layers with Snowflake Cortex AI",
+    "abstract": "An inside look at J.A.K.E. (Just Another Knowledge Engine), a production-grade Cortex AI agent embedded in Slack and Sigma that self-heals semantic layers — automatically generating Snowflake semantic views from dbt metadata, capturing query failures, identifying root causes, and patching definitions to create a continuous AgenticOps learning loop.",
+    "date": "July 22, 2026",
+    "location": "Virtual",
+    "upcoming": true,
+    "links": {
+      "eventPage": "https://events.sigmacomputing.com/semanticlayerswithsnowflakecortexai",
+      "slides": null,
+      "recording": null
+    }
+  },
+  {
     "event": "Snowflake Summit 2026",
     "eventLogo": "assets/icons/snowflake.svg",
     "title": "Self-Healing Semantic Layers with Snowflake Cortex AI: How Sigma Built J.A.K.E.",
