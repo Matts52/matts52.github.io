@@ -1,5 +1,14 @@
 [
   {
+    "title": "Sigma Adapter for ktx",
+    "githubLink": "https://github.com/Kaelio/ktx",
+    "imageSrc": "assets/projects/ktx_sigma_adapter.png",
+    "description": "Contributed the Sigma Computing adapter for ktx, an executable context layer that lets AI agents like Claude Code query analytical databases accurately with full company context.",
+    "demoLink": "https://docs.kaelio.com/ktx",
+    "tags": ["TypeScript", "Sigma Computing", "AI Agents"],
+    "display": "true"
+  },
+  {
     "title": "Sigma Public - 2025/26 NHL Goalie Comparison",
     "githubLink": null,
     "imageSrc": "assets/projects/nhl_goalie_comparison.png",
