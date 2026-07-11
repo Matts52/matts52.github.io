@@ -149,6 +149,14 @@
 ],
 "sigma": [
   {
+    "title": "How to Manage Your Data Backlog: A Practical Guide",
+    "link": "https://www.sigmacomputing.com/blog/data-backlog",
+    "description": "Explores strategies for managing data backlogs by converting recurring requests into self-service assets, certifying trusted datasets, and implementing ongoing triage processes to prevent queues from overwhelming data teams.",
+    "topic": "Strategy & Leadership",
+    "published_date": "2026-06-30",
+    "show": true
+  },
+  {
     "title": "How Sigma's Data Platform Team Manages Snowflake Semantic Views",
     "link": "https://www.sigmacomputing.com/blog/manage-snowflake-semantic-views",
     "description": "How Sigma lets you leverage Snowflake semantic views directly inside the Sigma UI without writing SQL or leaving your analytics workflow.",
