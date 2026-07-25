@@ -149,6 +149,14 @@
 ],
 "sigma": [
   {
+    "title": "Automated Data Insights: What They Are and How They Work",
+    "link": "https://www.sigmacomputing.com/blog/automated-data-insights",
+    "description": "Explains how automated data insights invert traditional analytics by delivering findings directly to decision-makers, covering detection logic, push-based delivery, and how Sigma's warehouse-native platform enables threshold alerts, anomaly detection, and AI-powered explanations.",
+    "topic": "Analytics Engineering",
+    "published_date": "2026-07-23",
+    "show": true
+  },
+  {
     "title": "How to Manage Your Data Backlog: A Practical Guide",
     "link": "https://www.sigmacomputing.com/blog/data-backlog",
     "description": "Explores strategies for managing data backlogs by converting recurring requests into self-service assets, certifying trusted datasets, and implementing ongoing triage processes to prevent queues from overwhelming data teams.",
