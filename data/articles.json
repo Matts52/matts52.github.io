@@ -99,6 +99,14 @@
 ],
 "substack": [
   {
+    "title": "How I Manage My Cortex Agents in dbt",
+    "link": "https://substack.com/home/post/p-208636228",
+    "description": "Materializing Cortex Agents directly from dbt.",
+    "topic": "Analytics Engineering",
+    "published_date": "2026-07-27",
+    "show": true
+  },
+  {
     "title": "Lessons from My First 3,000 Contributions as a Senior Analytics Engineer",
     "link": "https://matthewsenick.substack.com/p/lessons-from-my-first-3000-contributions",
     "description": "Reflects on career growth as a senior analytics engineer — why systemic design, delegation, and cross-functional trust matter more than individual output.",
