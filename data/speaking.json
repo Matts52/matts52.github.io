@@ -1,5 +1,19 @@
 [
   {
+    "event": "dbt Summit",
+    "eventLogo": "assets/icons/dbt.svg",
+    "title": "How Sigma Manages the Semantic Layer with dbt and Dagster",
+    "abstract": "Sigma's internal data platform team manages every semantic asset—Snowflake semantic views, Cortex Agents, Cortex Search Services, and Sigma Data Models—inside a single dbt project. In this session, we'll walk through the Dagster job that continuously deploys these assets whenever they change: building modified dbt nodes, persisting dbt state, updating the Sigma connection, and refreshing Sigma Data Models. We'll also preview an open-source contribution to OSI/Ossie: a Sigma converter that lets any team convert between semantic formats within a Dagster job, making it easier to adopt a unified, orchestrated semantic layer across tools.",
+    "date": "September 17, 2026",
+    "location": "Las Vegas, NV",
+    "upcoming": true,
+    "links": {
+      "eventPage": "https://www.getdbt.com/dbt-summit/agenda/how-sigma-manages-the-semantic-layer-with-dbt-and-dagster",
+      "slides": null,
+      "recording": null
+    }
+  },
+  {
     "event": "Sigma Computing Webinar",
     "eventLogo": "assets/companies/sigma-computing.svg",
     "title": "Self-Healing Semantic Layers with Snowflake Cortex AI",
