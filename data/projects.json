@@ -3,7 +3,7 @@
     "title": "Sigma Ossie Converter",
     "githubLink": "https://github.com/apache/ossie/tree/main/converters/sigma",
     "imageSrc": "assets/projects/ossie_dark_blue.svg",
-    "description": "Contributed the Sigma converter for Apache Ossie (Open Semantic Interchange), enabling Sigma workbooks and data models to be expressed in a vendor-neutral, open semantic format.",
+    "description": "Contributed the Sigma converter for Apache Ossie (Open Semantic Interchange), enabling Sigma data models to be expressed in a vendor-neutral, open semantic format.",
     "demoLink": "https://ossie.apache.org/#about",
     "tags": ["Sigma", "Open Source", "Apache"],
     "display": "true"
