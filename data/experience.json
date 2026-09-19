@@ -2,8 +2,15 @@
   {
     "company": "Sigma Computing",
     "logoSrc": "assets/companies/sigma-computing.svg",
+    "position": "Lead Data Platform Engineer",
+    "date": "September 2026 - Present",
+    "description": []
+  },
+  {
+    "company": "Sigma Computing",
+    "logoSrc": "assets/companies/sigma-computing.svg",
     "position": "Senior Analytics Engineer",
-    "date": "October 2025 - Present",
+    "date": "October 2025 - September 2026",
     "description": [
       "Synthesizing analytics engineering skills at a rapidly scaling data tooling company",
       "Working inside the internal data team of a SaaS analytics product",

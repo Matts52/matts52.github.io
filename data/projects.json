@@ -5,6 +5,7 @@
     "imageSrc": "assets/projects/ossie_dark_blue.svg",
     "description": "Contributed the Sigma converter for Apache Ossie (Open Semantic Interchange), enabling Sigma data models to be expressed in a vendor-neutral, open semantic format.",
     "demoLink": "https://ossie.apache.org/#about",
+    "demoLabel": "Docs",
     "tags": ["Sigma", "Open Source", "Apache"],
     "display": "true"
   },
