@@ -1,5 +1,19 @@
 [
   {
+    "event": "PlatformDay San Francisco",
+    "eventLogo": "assets/icons/platformday.svg",
+    "title": "Ship Meaning With the Data: CI/CD for Semantic Layers and Agent Assets",
+    "abstract": "Data teams have mature CI/CD for transformations, but the context agents rely on to use that data rarely gets the same treatment. Metric definitions, relationships, and instructions usually live in hand-edited semantic layers that drift the moment a model changes. This talk shows how to deploy that context with the data, shipping dbt models, semantic objects like Sigma data models and Snowflake semantic views, and agent assets like Cortex Agents and Sigma agents as a single release. Each change is versioned in one repo, validated in CI, gated by agent evals, and promoted together through every environment. You'll leave with a reference pipeline and a playbook for making \"agent-ready\" a deploy gate, not an afterthought.",
+    "date": "November 6, 2026",
+    "location": "San Francisco, CA",
+    "upcoming": true,
+    "links": {
+      "eventPage": "https://platformday.com/2026-san-francisco-q4/",
+      "slides": null,
+      "recording": null
+    }
+  },
+  {
     "event": "dbt Summit",
     "eventLogo": "assets/icons/dbt.svg",
     "title": "How Sigma Manages the Semantic Layer with dbt and Dagster",

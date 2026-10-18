@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Main body: rounded rect with bottom-right corner folded -->
+  <path d="M40,0 H460 Q500,0 500,40 V415 L415,500 H40 Q0,500 0,460 V40 Q0,0 40,0Z" fill="#111111"/>
+  <!-- Fold shadow triangle -->
+  <path d="M415,500 L500,415 L500,500Z" fill="#2b2b2b"/>
+  <!-- Stacked wordmark -->
+  <text x="250" y="158" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="148" fill="#D4851A">PLAT</text>
+  <text x="250" y="308" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="148" fill="#D4851A">FORM</text>
+  <text x="250" y="455" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="148" fill="#D4851A">DAY</text>
+</svg>
