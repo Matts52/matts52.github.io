@@ -157,6 +157,14 @@
 ],
 "sigma": [
   {
+    "title": "How Sigma's Data Platform Team Manages the Semantic Layer with Dagster and dbt",
+    "link": "https://www.sigmacomputing.com/blog/semantic-layer-dbt-dagster",
+    "description": "Explains how Sigma's internal data team treats the semantic layer as code by building it in dbt and deploying it through Dagster in the same job that constructs warehouse tables, ensuring consistency across all BI tools and enabling AI agents to access governed, unified definitions.",
+    "topic": "Analytics Engineering",
+    "published_date": "2026-09-30",
+    "show": true
+  },
+  {
     "title": "Custom AI Agents for Data Analytics: What It Takes to Build One That Works",
     "link": "https://www.sigmacomputing.com/blog/custom-ai-agents-data-analytics",
     "description": "Argues that purpose-built AI agents with defined access controls, scoped actions, and audit trails outperform general-purpose AI tools for analytics — providing reliable, repeatable results while keeping data governance within your warehouse security perimeter.",
